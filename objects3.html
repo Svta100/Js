@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+   
+ <h2>objects in use symbol method</h2>
+ <p>In JavaScript, an object is a collection of key-value pairs (properties) that can store data and functionality, allowing you to represent real-world entities or data structures</p>
+ <p>To test this, try adding the following lines into your code, just below the closing curly brace of the</p>
+<script>
+
+
+//we have create symbol key word
+    const mySymbolKey = Symbol()
+
+    let studentdetails = {
+        name : ['Vijay','Kumar','Kannaujiya'],
+        [mySymbolKey]: 'keyvalue',
+        class: 'MCA',
+        email: 'vijay@gmail.com',
+        rollName: 162161011,
+        loation:'Greater Noida',
+        result: 'pass',
+        age:24,
+        bio : function (){
+            console.log(`${this.name[0]} ${this.name[1]} ${this.name[2]} is ${this.age} year old and leave city ${this.address[1]}`);
+        }
+    }
+    console.log(studentdetails)
+    console.log(studentdetails[mySymbolKey]) // if create symbol
+
+    studentdetails.email = 'vijay@chatgpt.com' // email key value are updete
+    console.log(studentdetails.email)
+ 
+
+    // improtent method
+    //To test this, try adding the following lines into your code, just below the closing curly brace of the
+
+    const newdata = 'height';   // height is key
+    const newdata2 = '145.09CM'  // value of height
+
+    studentdetails[newdata] = newdata2;
+    console.log(studentdetails)
+    console.log('student height is',studentdetails.height)
+    
+    
+</script>
+</body>
+</html>

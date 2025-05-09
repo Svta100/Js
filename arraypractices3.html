@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 5 splice method</title>
+</head>
+<body>
+    <h2>Array practices Method </h2>
+    <p id="toplist"></p>
+<script>
+
+
+   let companyName = ['amazon','google','ibm','anr','zara','flimora','goldmines','filpkart','measho','adani','dmorgen','netflix','uber','microsoft']
+
+   console.log('company name', companyName)
+   companyName.shift();
+   let remove = companyName.splice(3,2,'ola','facebook')
+   companyName.push('amazon')
+   console.log(remove)
+   console.log(companyName)
+   
+   let topName = ['amazon','google','ibm','anr','zara','flimora','goldmines','filpkart','measho','adani','dmorgen','netflix','uber','microsoft']
+
+   let ultext = '<ol>';
+   
+   for(i=0;i<topName.length;i++){
+     ultext += '<li>'+  topName[i]+'</li>'
+   }
+   
+   ultext += '</ol>'
+  document.getElementById('toplist').innerHTML = ultext;
+ 
+   
+</script>
+</body>
+</html>

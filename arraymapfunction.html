@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Map function</title>
+</head>
+<body>
+  
+<script>
+    
+  let monthsName = ['January','February','March','April','May','June','July','Agusth','Spetember','October','November','December']
+  console.log(monthsName)
+  let capitalMonth= monthsName.map((month, index, array) => {
+     console.log(index + 1 + ' ' + month)
+     //console.log(array)
+     return month.toUpperCase()
+  },)
+  console.log(capitalMonth);
+
+
+  let capitalMonthfilter= monthsName.filter((month, index, array) => {
+     console.log(index + 1 + ' ' + month)
+     console.log(month.length)
+     return month.toUpperCase()
+  },)
+  console.log(capitalMonthfilter);
+
+  console.log("filter" , capitalMonthfilter);
+  console.log('map', capitalMonth);
+
+
+
+
+
+
+</script>
+</body>
+</html>

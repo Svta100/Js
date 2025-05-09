@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function 2</title>
+</head>
+<body>
+   
+ <h2>function practies qusetion</h2>
+    
+<script>
+  let usarArray = prompt("Enter Your Number");
+
+  let createarray=[]
+  for(i=1;i<=usarArray;i++){
+    createarray[i-1]=i;
+  }
+  console.log(createarray)
+  
+  createarray.forEach(function(item,ind,arr){
+      //console.log(item,ind,arr)
+      console.log(item,ind)
+  })
+
+  let reducevalue = createarray.reduce((itemcurrent,itemnext)=>{
+      return itemcurrent + itemnext;
+  })
+  console.log(reducevalue);
+
+  let reducevalueMul = createarray.reduce((itemcurrent,itemnext)=>{
+      return itemcurrent * itemnext;
+  })
+  console.log(reducevalueMul)
+
+
+
+  
+
+</script>
+</body>
+</html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        select{
+            border: 1px solid darkmagenta;
+            padding: 10px 10px;
+            width: 200px;
+            font-size: 15px;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+
+        li{
+            text-transform: capitalize;
+            color: darkmagenta;
+            font-size: 20px;
+        }
+        .card{
+            padding: 20px 20px;
+            background: #fff;
+            color: #000;
+            border: 1px solid #000;
+            border-radius: 10px;
+            width: 197px;
+            max-width: 100%;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 36px;
+            justify-content: left;
+            padding: 0px 39px;
+        }
+        img{
+            width: 200px;
+            height: 140px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .card p{
+            font-size: 16px;
+            margin: 10px 5px;
+            font-family: "Public Sans", sans-serif;
+            text-transform: capitalize;
+            color: indianred;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <select id="selectValue" onchange="filterItem(this);">
+        <option> --filter type item-- </option>
+    </select>
+    <div class="row">
+       
+    </div>
+    <script>
+       
+        let groceryshop=[
+            {
+                id:1,
+                item:"milk",
+                imgSource:"https://cdn.britannica.com/77/200377-050-4326767F/milk-splashing-glass.jpg",
+                price:200,
+                Instock:"Available",
+                itemsold:100,
+                itemtype: "drink",
+            
+
+            },
+            {
+                id:2,
+                item:"Jeera Biscuit",
+                price:150,
+                imgSource : 'https://static.toiimg.com/thumb/62403305.cms?imgsize=566439&width=800&height=800',
+                Instock:"Available",
+                itemsold:150,
+                itemtype: "sancks",
+            },
+            
+            {
+                id:3,
+                item:"Namkin",
+                price:250,
+                imgSource:'https://m.media-amazon.com/images/I/518ngwT8wzL._AC_UF1000,1000_QL80_.jpg',
+                Instock:"outofstock", 
+                itemsold:50,
+                itemtype:"food",
+                comingsoon:"comingsoon",
+            },
+            {
+                id:4,
+                item:"coconet",
+                price:50,
+                imgSource:'https://m.media-amazon.com/images/I/71+I2IPZOqL._AC_UF1000,1000_QL80_.jpg',
+                Instock:"outofstock",
+                itemsold:80,
+                itemtype:"Oils",
+                comingsoon:"comingsoon",
+ 
+            },
+            {
+                id:5,
+                item:"britannia bread",
+                price:300,
+                imgSource:'https://www.bigbasket.com/media/uploads/p/xxl/40092241_8-britannia-brown-bread-with-goodness-of-wheat-enriched-with-vitamins.jpg',
+                Instock:"Available",
+                itemsold:60, 
+                itemtype:"pulses",
+            },
+            {
+                id:6,
+                item:"seafood",
+                price:400,
+                imgSource:'https://cff2.earth.com/uploads/2022/07/24140127/Fish-oil-scaled.jpg',
+                Instock:"outofstock",
+                itemsold:210,
+                itemtype:"Oils",
+                comingsoon:"comingsoon",
+            },
+            {
+                id:7,
+                item:"pasta",
+                price:80,
+                imgSource:'https://m.media-amazon.com/images/I/61TV2t0w32L._AC_UF1000,1000_QL80_.jpg',
+                Instock:"Available",
+                itemsold:120,
+                itemtype:"pulses", 
+            },
+            {
+                id:8,
+                item:"Daawat Rice",
+                price:500,
+                imgSource:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGfxzHs511kiE9DizrScxXh_58HytqvQm_YQ&s',
+                Instock:"outofstock",
+                itemsold:45,
+                itemtype:"food",
+                comingsoon:"comingsoon",
+            },
+            {
+                id:9,
+                item:"Cheese",
+                price:350,
+                imgSource:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDikQH3soHIfs2CZnXgu7KHxeua82z256tVg&s',
+                Instock:"Available",
+                itemsold:50, 
+                itemtype:"snacks", 
+
+            },
+            {
+                id:10,
+                item:"Salad",
+                price:450,
+                imgSource:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTICZMuo15i1J7aa3jFsPRanYrG3wwgiAKsFA&s',
+                Instock:"Available",
+                itemsold:80,
+                itemtype:"snacks", 
+
+            },
+            {
+                id:11,
+                item:"Mustards Oils",
+                price:600,
+                imgSource:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-U6_arVFnc2uYJ-DQWPTR4l9xHJKxRxdX_w&s',
+                Instock:"outofstock", 
+                itemsold:98,
+                itemtype:"Oils",
+            },
+            {
+                id:12,
+                item:"Eggs",
+                price:350,
+                imgSource:'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/CIW/2024/5/29/9b4d187f-d583-4502-a9c2-2fce1aad088d_freshvegetables_AHH0F7IKBG_MN.png',
+                Instock:"Available", 
+                itemsold:47,
+                itemtype:"food",
+            },
+            {
+                id:13,
+                item:"Dairy Chocolate",
+                price:245,
+                imgSource:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcTyCxYIAt-8O1P2RVOZPQjsWroPoAdD6ltg&s',
+                Instock:"Available",
+                itemsold:80,
+                itemtype:"snacks", 
+            },
+            {
+                id:14,
+                item:"flour",
+                price:600,
+                imgSource:'https://www.bigbasket.com/media/uploads/p/xxl/126906_10-aashirvaad-atta-whole-wheat.jpg',
+                Instock:"outofstock",
+                itemsold:54,
+                itemtype:"snacks", 
+                comingsoon:"comingsoon",
+            },
+            {
+                id:15,
+                item:"honey",
+                price:500,
+                imgSource:'https://www.bigbasket.com/media/uploads/p/xxl/239524-2_6-dabur-100-pure-honey-worlds-no1-honey-brand-with-no-sugar-adulteration.jpg',
+                Instock:"Available", 
+                itemsold:85,
+                itemtype:"snacks",
+            },
+            {
+                id:16,
+                item:"suger",
+                price:150,
+                imgSource:'https://rukminim3.flixcart.com/image/850/1000/xif0q/sugar/f/d/6/100-best-quality-sugar-1kg-pack-of-1-white-sugar-1000-g-pouch-1-original-imaggrh58wtdsp4z.jpeg?q=20&crop=false',
+                Instock:"outofstock", 
+                itemsold:80,
+                itemtype:"food",
+                comingsoon:"comingsoon",
+            },
+            {
+                id:17,
+                item:"Salt",
+                price:50,
+                imgSource:'https://m.media-amazon.com/images/I/614mm2hYHyL._AC_UF1000,1000_QL80_.jpg',
+                Instock:"Available", 
+                itemsold:36,
+                itemtype:"food",
+            },
+            {
+                id:18,
+                item:"Yogurt",
+                price:520,
+                imgSource:'https://www.bigbasket.com/media/uploads/p/xxl/40327716_1-mother-dairy-plain-greek-yoghurt.jpg',
+                Instock:"Available", 
+                itemsold:65,
+                itemtype:"food",
+            },
+            {
+                id:19,
+                item:"Popcorn pack",
+                price:100,
+                imgSource:'https://www.bigbasket.com/media/uploads/p/l/311790_4-act-ii-microwave-popcorn-value-pack-butter.jpg',
+                Instock:"Available", 
+                itemsold:200,
+                itemtype:"snacks",
+
+            },
+            {
+                id:20,
+                item:"Popcorn Normal",
+                price:300,
+                imgSource:'https://5.imimg.com/data5/VY/RD/TZ/SELLER-5554782/normal-popcorn-maize-500x500.jpg',
+                Instock:"Available", 
+                itemsold:200,
+                itemtype:"snacks",
+            },
+            {
+                id:21,
+                item:"Lays Chips",
+                price:100,
+                imgSource:'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS5t0Y6IHhLhIwoGHwrkOpG__4iia0RgbO_y-MDFmD8dYybe3L0hRgIa5Fo68iZ4kbRN0CdzR3heultRvddk5Fgm_bZB6NZtNXL5UUy1uZtY06WasHm3tU6',
+                Instock:"outofstock", 
+                itemsold:200,
+                itemtype:"snacks",
+
+            },
+            {
+                id:22,
+                item:"Multi-Pack Drinks",
+                imgSource:'https://gadegal-homestay.himwebx.com/wp-content/uploads/2023/10/cold-drink.jpeg',
+                price:890,
+                Instock:"outofstock", 
+                itemsold:300,
+                itemtype:"drink",
+
+            },
+            {
+                id:23,
+                item:"Onion",
+                price:300,
+                imgSource:'https://m.media-amazon.com/images/I/51DJ-9xkuQL.jpg',
+                Instock:"Available", 
+                itemsold:400,
+                itemtype:"food",
+
+            },
+            {
+                id:24,
+                item:"Nirama",
+                price:200,
+                imgSource:'https://tiimg.tistatic.com/fp/1/007/454/nirma-washing-powder-for-home-laundry-pack-size-1-kg-946.jpg',
+                Instock:"outofstock", 
+                itemsold:230,
+                itemtype:"Daily Use",
+
+            },
+            {
+                id:25,
+                item:"Makhana",
+                price:200,
+                imgSource:'https://www.farmley.com/cdn/shop/files/jumbomakhanapouchB_listing-01.jpg?v=1715070023',
+                Instock:"Available", 
+                itemsold:500,
+                itemtype:"food",
+
+            }, 
+            {
+                id:26,
+                item:"Maggi",
+                price:250,
+                imgSource:'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTypOFUQ8YM3e-8uTNvc0fKwJu1FK7PYgFB2adb6bfPqwPSTuWEF5fRWwXNl7-C7fnZc9W7vCEqDdTrmso4A7jDlTxN4QVveGrLhctbgp6IqVV5yjlUsRzGZA',
+                Instock:"Available", 
+                itemsold:300,
+                itemtype:"food",
+
+            },
+            {
+                id:27,
+                item:"Pasta",
+                price:200,
+                imgSource:"https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSt_iFt6T6MTgDK13d5vK9onwKVnBsg0gtZoeK6EN6gLfDn1xnO6OEiaEECvwr77NIKk3mTnT3soEPC4oWyTfn0pzEpI_7krJhzCf5Op85Dk3sfbD0F6mGa",
+                Instock:"outofstock", 
+                itemsold:200,
+                itemtype:"food",
+
+            },
+            {
+                id:28,
+                item:"Dahi",
+                price:270,
+                imgSource:'https://www.jiomart.com/images/product/original/494502732/amul-dahi-creamy-tasty-fresh-curd-850-g-product-images-o494502732-p610662657-0-202411181537.jpg?im=Resize=(1000,1000)',
+                Instock:"Not Available", 
+                itemsold:100,
+                itemtype:"food",
+
+            }, 
+            {
+                id:29,
+                item:"Butter",
+                price:260,
+                imgSource:'https://media.wired.com/photos/679378b3272f62216454279b/master/w_2560%2Cc_limit/GettyImages-149134517.jpg',
+                Instock:"Available", 
+                itemsold:500,
+                itemtype:"food",
+
+            },
+            {
+                id:30,
+                item:"Deshi Ghee",
+                price:1560,
+                imgSource:'https://www.shuddhamorganics.com/cdn/shop/files/SmartSelect-20231001_000630_Gallery.jpg?v=1696099042',
+                Instock:"outofstock", 
+                itemsold:500,
+                itemtype:"food",
+
+            }
+            ,
+            {
+                id:31,
+                item:"Desi Butter",
+                price:2000,
+                imgSource:'https://organicmandya.com/cdn/shop/files/Butter_ecaf25fb-fa04-4245-b7df-493e4d28ac29.jpg?v=1737014131&width=1000',
+                Instock:"outofstock", 
+                itemsold:1000,
+                itemtype:"Oils",
+
+            } 
+            ,
+            {
+                id:32,
+                item:"Mayonnaise",
+                price:1160,
+                imgSource:'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ1VYdx2ySUe8_7WCt-9ZT5bM2hbIowdNkgIHbkf-4X0q5qQEpL_yFEXCUn4MDn49OhiwixpqgHaUBIwKQZ_e0o-Dde9FTIPb9di26L3_M',
+                Instock:"outofstock", 
+                itemsold:400,
+                itemtype:"Oils",
+
+            },
+            {
+                id:33,
+                item:"Dettol",
+                imgSource:'https://m.media-amazon.com/images/I/51Mjri89amL._AC_UF1000,1000_QL80_.jpg',
+                price:160,
+                Instock:"outofstock", 
+                itemsold:400,
+                itemtype:"Liquids",
+            } 
+            ,{
+                id:34,
+                item:"Savlon",
+                price:160,
+                imgSource:'https://m.media-amazon.com/images/I/51Ltdf741EL._AC_UF894,1000_QL80_.jpg',
+                Instock:"Available", 
+                itemsold:400,
+                itemtype:"Liquids",
+
+            } 
+            ,{
+                id:35,
+                item:"Alvera",
+                imgSource:'https://www.avizor.com/en/wp-content/uploads/sites/3/2021/02/alvera-3x350-2.png',
+                price:1260,
+                Instock:"Available", 
+                itemsold:800,
+                itemtype:"Liquids",
+
+            }
+            ,{
+                id:36,
+                item:"Olamor, Premium Samppoo",
+                price:460,
+                imgSource:'https://olamor.in/cdn/shop/files/GlistenKeratinShampoo1L.jpg?v=1700474623&width=1500',
+                Instock:"Available", 
+                itemsold:850,
+                itemtype:"Liquids",
+            } 
+            ,{
+                id:37,
+                item:"Surf Excel",
+                price:360,
+                imgSource:'https://m.media-amazon.com/images/I/61s5orKgmwL._AC_UF1000,1000_QL80_.jpg',
+                Instock:"Available", 
+                itemsold:830,
+                itemtype:"Liquids",
+            } 
+            ,{
+                id:38,
+                item:"Lizol",
+                imgSource:'https://m.media-amazon.com/images/I/61RZYOWNW+L._AC_UF1000,1000_QL80_.jpg',
+                price:360,
+                Instock:"outofstock", 
+                itemsold:830,
+                itemtype:"Liquids",
+            }     
+            ,{
+                id:39,
+                item:"Nimyle Floor Cleaner",
+                price:330,
+                imgSource:'https://static1.industrybuying.com/products/cleaning/cleaning-liquid-essentials/floor-cleaner/CLE.FLO.228591422_1736337944819.webp',
+                Instock:"Available", 
+                itemsold:230,
+                itemtype:"Liquids",
+            }     
+            ,{
+                id:40,
+                item:"Britannia Rusk",
+                price:360,
+                imgSource:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTAundi3QHY6_dYI0eA7BPBSMTLusLeJuVFg&s',
+                Instock:"Available", 
+                itemsold:830,
+                itemtype:"snacks",
+            } ,
+            {
+                id:41,
+                item:"Salt Banana Chips ",
+                price:350,
+                imgSource:'https://vsmani.com/cdn/shop/files/20.jpg?v=1735308651',
+                Instock:"Available",
+                itemsold:400,
+                itemtype: "sancks",
+            }, 
+            {
+                id:42,
+                item:"Lay's Potato Chips",
+                price:30,
+                imgSource:'https://www.bigbasket.com/media/uploads/p/xxl/1212518-2_7-lays-potato-chips-classic-salted.jpg',
+                Instock:"Available",
+                itemsold:400,
+                itemtype: "sancks",
+            }, 
+            {
+                id:43,
+                item:"Sofit Almond Drink Unsweetend",
+                price:290,
+                imgSource:'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR9VQ15sJ19p_JPcai6OoEN1n7CiL8AQf_jFBZZhsh_RgYYk8dVZLxM2_VrrEWmkzgs5SVWT0MqI_CgYRwNsvyHlCqyICGfJwvzxJbUywI1wH3cKmNjaHxQ4CE',
+                Instock:"Available",
+                itemsold:400,
+                itemtype: "Dairy",
+            },  
+            {
+                id:44,
+                item:"Nescafe Classic Coffee ",
+                price:199,
+                imgSource:'https://www.mynestle.in/media/catalog/product/1/_/1_68.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=600&width=600&canvas=600:600',
+                Instock:"Available",
+                itemsold:400,
+                itemtype: "Beverages",
+            },  
+            {
+                id:45,
+                item:"Modern Kitchens Butter ",
+                price:290,
+                imgSource:'https://rukminim2.flixcart.com/image/416/416/xif0q/snack-savourie/k/f/l/-original-imaghe4h336gyw5s.jpeg?q=70',
+                Instock:"Available",
+                itemsold:200,
+                itemtype: "Beverages",
+            },  
+            {
+                id:46,
+                item:"Tea",
+                price:690,
+                imgSource:'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSefU-p87Z677Bn_iYn6oENlMC7dlpGujExSCDYCywTRlTkN7X7CwJ1Iki-fiXeRMP7PZ-vYlDsjVluwpKk0jPo6ALAKP1UEVB_vRDkIHOQaEyEJgWEE9vi9A',
+                Instock:"Available",
+                itemsold:350,
+                itemtype: "Beverages",
+            }, 
+            {
+                id:47,
+                item:"Himalayan Berry Juice",
+                price:696,
+                imgSource:'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTkCUGxBkvgh7BC6yb2tLcNbkrQ-hp1BwWUbzCtUpmZAOFFx0xzTcFT7v1M1GVttiGGogCWPiAJwkr8j41UeHibw9skGw-qeS3ZB9fv16vpg7tSulBOUW2A',
+                Instock:"Available",
+                itemsold:350,
+                itemtype: "Beverages",
+            },   
+            {
+                id:48,
+                item:"Real Mixed Fruit Juice",
+                price:696,
+                imgSource:'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRQN2HOj1X7nqdCHKmYcFgh5p3jq3YtYboMZ6boASXrcuxdVgiuL9Y6wOctbyWk61QayWGUJPlBjNxi9eQ93GBTQ6lk6VfYh3qKeLgi5gZEU4798PDm889vxg',
+                Instock:"Available",
+                itemsold:350,
+                itemtype: "Beverages",
+            },
+            {
+                id:49,
+                item:"Fortune Besan",
+                price:300,
+                imgSource:'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTXetOMN6V3vEfgBdS9VT8bD7wwDUdufgyk2l-ffeF-C14LLhukw7f8UiqAR-PhqizzGiiVZSBtNhxP4gxCt9eMZGhvjwygux0d6N2oXiqfSASKF8IN4TRH',
+                Instock:"Available",
+                itemsold:350,
+                itemtype: "food",
+            },
+            {
+                id:50,
+                item:"Toor/Arhar Dal",
+                price:200,
+                imgSource:'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRoeKvbeyCxM-zWDJFGOjRe6SjHjdfS63ejKF6PKmgEuHdYVMFRVTQV0ISXwywsBPQAHjiLDIoNhwDmHmAleRmPF7LhQf7MUMWOTe6ehKyhntBmF60pVxs',
+                Instock:"Available",
+                itemsold:350,
+                itemtype: "food",
+            }, 
+   
+
+        ]
+
+       let selectOption = document.querySelector('#selectValue');
+       let rowflex = document.querySelector('.row');
+       let allpush =[]
+
+       //console.log(groceryshop)
+       //console.log(allpush)
+       groceryshop.forEach((el,item, array)=>{
+        rowflex.innerHTML +=`
+        <div class="card">
+            <img src='${el.imgSource}'>
+            <!--<p>Id: ${el.id}</p>-->
+            <p>Name: ${el.item}</p>
+            <p>Price: ${el.price}</p>
+            <p>Instock: ${el.Instock}</p>
+            <p>ItemSold: ${el.itemsold}</p>
+            <p>ItemType: ${el.itemtype}</p>
+        </div>`
+           if(!allpush.includes(el.itemtype)){
+              allpush.push(el.itemtype)
+              
+           }  
+       })
+
+       allpush.forEach((e)=>{
+           let createOption = document.createElement('option');
+           createOption.innerHTML = e;
+           createOption.setAttribute('value' , `${e}`);
+           selectOption.append(createOption)
+       })
+       function filterItem(event){
+           let selectValue = event.value; 
+           console.log(selectValue)
+           rowflex.innerHTML = "";
+           groceryshop.filter( (el)=>{
+              if(el.itemtype === selectValue){
+                console.log(el.itemtype)
+                rowflex.innerHTML +=`
+                <div class="card">
+                    <img src='${el.imgSource}'>
+                    <!--<p>Id: ${el.id}</p>-->
+                    <p>Name: ${el.item}</p>
+                    <p>Price: ${el.price}</p>
+                    <p>Instock: ${el.Instock}</p>
+                    <p>ItemSold: ${el.itemsold}</p>
+                    <p>ItemType: ${el.itemtype}</p>
+                </div>`
+              }
+             
+           })
+       }  
+       groceryshop.filter((elitem, elindex)=>{
+            if(elitem.price >= 300){
+                console.log(elindex , elitem.item, elitem.price)
+            }
+        })
+
+        
+    </script>
+</body>
+</html>

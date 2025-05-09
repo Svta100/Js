@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2><b>Inheritance</b> =></h2>
+        Inhertance is passing down properties & Method from parent class to child class
+    </p>
+   <p>or "A class created with a class inheritance inherits all the methods from another class:
+
+    "</p>
+    <p>
+        <strong>syntax</strong>
+    </p>
+   
+    <p>
+        <b>
+            class parent{
+
+            }
+        </b>
+    </p>
+    <p>
+        <b>
+            To create a class inheritance, use the extends keyword.
+        </b>
+    </p>
+    <p>
+        <strong>
+            class child  extend parent{
+
+            }
+        </strong>
+    </p>
+
+    <p>
+        <address>
+            if child & parent have same method child's method will be  used  <b>[Method Overriding]</b>
+        </address>
+    </p>
+    <script>
+       
+       let viewMyWebsite = "secret Information";
+
+       class userVisitorwebsite {
+           constructor(name ,usermail, mobilenumber){
+            this.name = name;
+            this.usermail = usermail;
+            this.mobilenumber = mobilenumber;
+            console.log(`${this.name}, ${this.usermail} ,${this.mobilenumber}`)
+           }
+
+           viewData(){
+            console.log("you can see" + viewMyWebsite);
+           }
+
+       }
+
+       class Admin extends userVisitorwebsite{
+        constructor(name, usermail,mobilenumber){
+            super(name,usermail,mobilenumber)
+        }
+         editData(){
+            viewMyWebsite = "Admin change data secret Information"
+         }
+       }
+       
+       let user1 = new userVisitorwebsite('firstuser','abc@gmail.com', 9090090055);
+       let user2 = new userVisitorwebsite('seconduser','Pqr@gmail.com', 9043678943);
+       let user3 = new userVisitorwebsite('thirduser','xyz@gmail.com', 9809564567);
+       let teacher = new userVisitorwebsite('deensir', 'deen@gmail.com',9889988989 )
+
+       user1.viewData()
+       user2.viewData()
+       user3.viewData()
+
+
+       let admin1 = new Admin('adminSir','admin@gmail.com', 9999999999);
+
+       console.log(admin1)
+       console.log(admin1.editData())
+       
+
+    </script>
+</body>
+
+</html>

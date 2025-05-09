@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom </title>
+    <style>
+    select{
+        width: 300px;
+        height: 40px;
+        padding: 0px 6px;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+    </style>
+</head>
+<body>
+<h1>
+    i  use dom change event color change
+</h1>
+<select id="select">
+    <option>Red</option>
+    <option>green</option>
+    <option>blue</option>
+    <option>yellow</option>
+    <option>pink</option>
+</select>
+<script>
+
+    let selectcolor = document.querySelector("#select");
+    console.log(selectcolor.children)
+
+    selectcolor.addEventListener('change',(e)=>{
+        console.log(e.target.value)
+        document.querySelector('body').style.backgroundColor = e.target.value;
+    })
+</script>
+</body>
+</html>

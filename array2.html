@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array practies </title>
+    
+</head>
+
+<body>
+<h3>Array method</h3>
+<p id="myfood"></p>
+
+<script>
+  
+ let food_items = ['mengo','banana','apple','orange','chicco','licchi', 'draganfood','lemon','nariyal']
+ console.log(food_items)
+
+ let food_name = '<ol>';
+  for(let i=0; i<food_items.length;i++){
+    food_name += '<li>'+ food_items[i] +'</li>'
+   // console.log(i +" "+ food_items[i])
+  }
+  food_name +='</ol>';
+  document.getElementById("myfood").innerHTML=food_name;
+
+
+  food_items[food_items.length]="onion";
+  console.log(food_items)
+  //console.log(food_items.sort())
+  console.log(food_items.length)
+</script>
+</body>
+</html>

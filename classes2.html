@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2>Classes =></h2>
+    class is program-code template for creating objects<br>
+    those object will have some state (variable) & some brhaviour (function) inside it.<br>
+
+    <br>
+    syntax -:
+    <br>
+
+    class myClassName{  <br>
+        constructor(){....}<br>
+        myMethod(){....} <br>
+    }<br>
+    let myObj = new myClassName ()<br>
+    </p>
+    <script>
+        class ToyataCar {
+          start(){
+              console.log("car is start");
+          }
+          stop(){
+              console.log('car is stop');
+          }
+          setBrandName(brand){
+              this.brandName = brand;
+              console.log("brand name is" + brand)
+          }
+        }
+      
+        let fortuner = new  ToyataCar();
+        console.log(fortuner.start())
+        //if set brand name
+       fortuner.setBrandName('fortuner')
+      
+       let innova = new  ToyataCar();
+         //if set brand name
+        innova.setBrandName('innova')
+        console.log(innova.stop())
+        
+        
+      </script>
+</body>
+
+</html>

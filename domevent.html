@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 300px;
+            width: 250px;
+            object-fit: cover;
+        }
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Events in Javascript </h1>
+    
+
+    <ul class="mainul" id="ullist">
+        <li><img id="girl1" src="https://cdn.pixabay.com/photo/2021/04/12/04/22/woman-6171278_1280.jpg" alt=""></li>
+        <li><img id="girl2" src="https://cdn.pixabay.com/photo/2021/04/03/02/52/ao-dai-6146369_1280.jpg" alt=""></li>
+        <li><img id="bird" src="https://cdn.pixabay.com/photo/2025/02/26/09/58/bird-9432600_1280.jpg" alt=""></li>
+        <li><img id="home"  src="https://cdn.pixabay.com/photo/2023/06/26/21/22/shack-8090832_1280.jpg" alt=""></li>
+        <li><img id="flower" src="https://cdn.pixabay.com/photo/2022/04/15/07/44/purple-roses-7133816_1280.jpg" alt=""></li>
+        <li><img id="natural" src="https://cdn.pixabay.com/photo/2023/11/17/16/54/boat-8394639_1280.jpg" alt=""></li>
+        <li><img id="animals" src="https://cdn.pixabay.com/photo/2024/09/15/13/03/cows-9049119_960_720.jpg" alt=""></li>
+        <li><img id="animals2" src="https://cdn.pixabay.com/photo/2025/02/11/20/43/chameleon-9399800_1280.jpg" alt=""></li>
+        <li><img id="animals3" src="https://cdn.pixabay.com/photo/2024/12/13/21/16/bird-9266166_960_720.jpg" alt=""></li>
+    </ul>
+
+    <button class="btn">check event</button>
+    <script>
+        let btncheck = document.querySelector('.btn');
+        
+        // type , toElement ,defaultPrevented,
+        // target ,timestamp,srcElement,currentTarget,
+        // clientX clientY ,screenX, screenY
+        // altkey ctrlkey ,shiftkey ,keyCode
+          
+        btncheck.addEventListener('click', (e)=>{
+            console.log(e)
+            console.log(e.view)
+            console.log(e.view.innerHeight)
+            console.log(e.timeStamp)
+        })
+
+
+    let ulmain = document.querySelector('.mainul')
+
+// what  is Event propagation
+
+// this is Event propagation, capturing ?
+
+    // ulmain.addEventListener('click',(el)=>{
+    //      console.log('click inside of ul')
+    // }, true)
+    // let tagetimg = document.getElementById('bird')
+    
+    // tagetimg.addEventListener('click',(e)=>{
+    //     console.log('click bird images')
+    // },true)
+
+// this is Event bubbling ?
+
+    // ulmain.addEventListener('click',(e)=>{
+    //      console.log('click inside of ul')
+    // }, false)
+    // let tagetimg = document.getElementById('bird')
+    
+    // tagetimg.addEventListener('click',(e)=>{
+    //     console.log('click bird images')
+    // },false)
+
+
+// if want you stop Event bubbling then  use e.stopPropagation()
+
+//    ulmain.addEventListener('click',(e)=>{
+//          console.log('click inside of ul')
+//     }, false)
+//     let tagetimg = document.getElementById('bird')
+    
+//     tagetimg.addEventListener('click',(e)=>{
+//         console.log('click bird images')
+//         e.stopPropagation()
+//     },false)
+
+// if click a partcular images
+
+    // document.getElementById('animals').addEventListener('click', function(e){
+    //     console.log(e)
+    //     console.log('your are click animals images');
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    // })
+
+//  if click images get details
+
+    document.querySelector("#ullist").addEventListener('click',(e)=>{
+       // console.log(e.view.location.href)
+       // console.log(e.target.id)
+       // console.log(e.target.tagName)
+        //console.log(e.target.parentNode)
+       // console.log(e.target.tagName)
+
+        // let removeit = e.target.parentNode
+        // removeit.remove()
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.tagName)
+            console.log(e.target.id)
+            let removeli = e.target.parentNode;
+            removeli.remove()
+
+        }
+
+
+    })
+
+
+    </script>
+</body>
+</html>

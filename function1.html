@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function test</title>
+</head>
+<body>
+    <h1>function test and Arrow funtion</h1>
+  <script>
+   function sum(a,b){
+    return a+b
+   }
+
+   function mul(a,b){
+    return a*b
+   }
+   let addsum = sum(3,4);
+   let addmul = mul(4,5)
+   console.log('call sum number of two', addsum)
+   console.log('call mul number of two', addmul)
+
+
+
+   // let use arrow function
+
+   let arrowfunsum = (a,b) => a%b==0
+   console.log('useing arrow function',arrowfunsum(5,5))
+
+   let arrowfun = (a,b)=>{
+    return a+b
+   } 
+   console.log('useing arrow function',arrowfun(3,5))
+  
+   let arrowfun2 = (a,b)=> a*b
+   console.log('useing arrow function',arrowfun2(3, 5)); // Outputs 14
+
+
+  //if not use parameter then
+
+  let notuseprama = ()=>{
+    return 'hello arrow function'
+  }
+  console.log(notuseprama())
+
+  
+
+//console.log(x)
+  </script>
+</body>
+</html>

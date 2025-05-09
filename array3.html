@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array practies </title>
+    
+</head>
+
+<body>
+<h3>Array push/pop method</h3>
+<p id="myfood"></p>
+<input type="text" placeholder="Add Food Item" id="myinput">
+<button onclick="getValue()">check</button>
+<script>
+  
+ let food_items = ['mengo','banana','apple','orange','chicco','licchi', 'draganfood','lemon','nariyal']
+ console.log(food_items)
+
+ let popitem = food_items.pop();
+ console.log(popitem)
+ console.log(food_items)
+
+
+ let addfood =[]
+
+function getValue(){
+   var input = document.getElementById("myinput");
+   document.getElementById("myfood").innerHTML=food_items
+   var value = input.value;
+   //food_items.push(value)
+   food_items[food_items.length]= value;
+   console.log(food_items)
+}
+</script>
+</body>
+</html>

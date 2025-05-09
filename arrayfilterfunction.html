@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array for each</title>
+    <script src="./console.js"></script>
+    <script src="./script.js"></script>
+</head>
+<body>
+  
+<script>
+    
+let monthsName = ['January','February','March','April','May','June','July','Agusth','Spetember','October','November','December']
+ 
+let filtermonth = monthsName.filter( (month) => {
+    
+    console.log(month)
+
+    // if(month.length <= 4){
+    //     console.log(month)
+    // }
+    //else{
+    //   console.log(month)
+    //}
+    
+    //return month.length >= 5;
+    return month.toLocaleLowerCase().includes('m')
+})
+console.log("includes('m')", filtermonth)
+
+
+
+let filtermonthindex = monthsName.filter( (month, index, array) => {
+    console.log(month)
+    return index >= 6 ;
+})
+console.log('index Array', filtermonthindex)
+
+
+let students = [
+    {
+        name:'rohit',
+        age: 25,
+        class: 'M.Sc'
+    },
+    {
+        name:'rahul',
+        age: 23,
+        class: 'M.Sc'
+    },
+    {
+        name:'vijay',
+        age: 25,
+        class: 'MCA'
+    },
+    {
+        name:'sunil',
+        age: 23,
+        class: 'B.Sc'
+    },
+    {
+        name:'devesh',
+        age: 28,
+        class: 'B.Tech'
+    },
+    {
+        name:'aksah',
+        age: 25,
+        class: 'M.Tech'
+    },
+    {
+        name:'shailesh',
+        age: 16,
+        class: 'MCA'
+    },
+    {
+        name:'akhilesh',
+        age: 17,
+        class: 'BCA'
+    },
+    {
+        name:'munni',
+        age: 19,
+        class: 'MCA'
+    },
+    {
+        name:'narayan',
+        age: 18,
+        class: 'MCA'
+    }
+]
+
+
+let adultStudent = students.filter( (student)=>{
+    console.log('filter Name/Age/Class', student.name , student.age , student.class)
+    return student;
+})
+console.log(adultStudent)
+
+const adultStudentName = adultStudent.map( (student)=>{
+      return  student.name
+})
+console.log(adultStudentName)
+
+
+
+// use other method
+
+const adultStudentAge = students.filter( (studentname)=>{
+    return studentname.age  <= 18
+}).map( (studentname)=>{
+    return studentname.name
+}).filter( (studentnames)=>{
+    return studentnames.includes('a')
+})
+console.log(adultStudentAge)
+
+
+ const number = [1,2,3,4,5,6,7,8,9,10,20,23,34,32,43,54,12,23,25,22,30,64,100,45,50]
+
+ const newNumber = number.filter( (num,index,arr)=>{
+   // console.log(arr)
+    console.log(`${num} + ${index} =>`,num+index)
+    return num%2==0;
+ }).map(function(num){
+    console.log('num*2', num*2)
+    return num*2
+ }).filter( (num)=>{
+    return num-4
+ })
+ console.log(newNumber)
+
+</script>
+</body>
+</html>

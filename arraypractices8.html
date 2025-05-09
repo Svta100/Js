@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+   
+ <h2>function/array practies qusetion 5</h2>
+ <p>Please Enter choose your Number</p>
+ <span>Choose User Number</span> :<p id="usernum"></p>
+<script>
+    let usern = document.getElementById('usernum');
+    usern.innerHTML="";
+    let usernumber = prompt("Enter Your Number")
+    console.log(usernumber);
+    
+    let createArray =[];
+
+    for(i=1;i<=usernumber;i++){
+        //console.log(i)
+        createArray[i-1]=i;
+
+        usern.innerHTML+= `\t ${i}`;
+        
+    }
+    console.log(createArray)
+
+   const forenach = createArray.map( (element)=>{
+      return element*2;
+    }).filter( function(element2){
+        return element2%3==0;
+    })
+    console.log(forenach)
+</script>
+</body>
+</html>

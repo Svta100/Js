@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+   
+ <h2>objects</h2>
+ <p>In JavaScript, an object is a collection of key-value pairs (properties) that can store data and functionality, allowing you to represent real-world entities or data structures</p>
+<script>
+    let studentdetails = {
+        name : ['Vijay','Kumar','Kannaujiya'],
+        class: 'MCA',
+        rollName: 162161011,
+        address:['Mumbai','Greater Noida','Azamgarh'],
+        result: 'pass',
+        age:24,
+        bio : function (){
+            console.log(`${this.name[0]} ${this.name[1]} ${this.name[2]} is ${this.age} year old and leave city ${this.address[1]}`);
+        }
+    }
+    // this is simple method
+    console.log(studentdetails)
+    // use squar notation method
+    console.log('this student in', studentdetails['class'])
+    console.log(studentdetails.address[2])
+    studentdetails.bio()
+    for(let val in studentdetails){
+        console.log('key' + " ", studentdetails[val])
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FullPage.js Demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css" />
+   <style>
+    /* Styles for the demo */
+body {
+  font-family: arial, helvetica;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6em;
+  font-size: calc(2em + 2vw);
+  margin: 0;
+}
+
+/* Backgrounds colors for sections */
+.fp-section:nth-child(1) {
+  background-image: linear-gradient(128deg, #40afff, #3f61ff);
+}
+
+.fp-section:nth-child(2) {
+  background-image: linear-gradient(128deg, #ff9a3f, #ff4b40);
+}
+
+.fp-section:nth-child(3) {
+  background-image: linear-gradient(128deg, #fc40ff, #543fff);
+}
+.fp-prev2{
+    border-width: 38.5px 34px 38.5px 0;
+    border-color: transparent #fc40ff transparent transparent;
+    left: 15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    cursor: pointer;
+    margin-top: -38px;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.fp-next2{
+    border-width: 38.5px 0 38.5px 34px;
+    border-color: transparent transparent transparent #40afff;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    cursor: pointer;
+    margin-top: -38px;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+   </style>
+</head>
+<body>
+
+<!-- fullPage.js HTML -->
+<div id="fullpage">
+    <div class="section"><h1>Custom Animation</h1></div>
+    <div class="section">
+        <div class="slide"><h1>Section 2</h1>
+            <div class="fp-prev2" style="display: block;"></div>
+        </div>
+        <div class="slide"><h1>Slide 2.2</h1></div>
+        <div class="slide"><h1>Slide 2.3</h1></div>
+       <div class="slide"><h1>Slide 2.4</h1></div>
+       <div class="slide"><h1>Slide 2.5</h1></div>
+       <div class="slide"><h1>Slide 2.6</h1>
+        <div class="fp-next2" style="display: block;"></div>
+       </div>
+    </div>
+    <div class="section"><h1>Section 3</h1></div>
+</div>
+<script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+<script>
+    var myFullpage = new fullpage("#fullpage", {
+        loopHorizontal: false,
+    // Equivalent to jQuery `easeOutBack` extracted from http://matthewlein.com/ceaser/
+    
+    // Get your license at https://alvarotrigo.com/fullPage/pricing
+    licenseKey: "xxxxxxxxxxxxxxxxxxxxxxxxx"
+    });
+
+</script>
+<script>
+    let arrowleft = document.querySelector('.fp-prev2');
+    arrowleft.addEventListener('click', (e)=>{
+        fullpage_api.moveSectionUp();
+        console.log(e)
+    })
+    let arrowright = document.querySelector('.fp-next2');
+    arrowright.addEventListener('click', (e)=>{
+        fullpage_api.moveSectionDown();
+        console.log(e)
+    })
+</script>
+</body>
+</html>

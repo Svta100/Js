@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom </title>
+    <style>
+    select{
+        width: 300px;
+        height: 40px;
+        padding: 0px 6px;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+    .mainbox{
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 40px 40px;
+        background: saddlebrown;
+        align-items:flex-start ;
+    }
+    .rightside{
+        width: 100%;
+        background: #fff;
+        min-height: 400px;
+        padding: 40px 40px;
+    }
+    h1{
+        text-transform: capitalize;
+        text-align: center;
+    }
+    input{
+        width: 250px;
+        height: 50px;
+        padding: 0px 8px;
+        border: 2px solid darkmagenta;
+        border-radius: 6px;
+        margin-bottom: 10px;
+    }
+    labal{
+        font-size: 16px;
+        color: darkmagenta;
+        line-height: normal;
+        font-weight: 400;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    </style>
+</head>
+<body>
+<h1>
+    i have make dynamic form create
+</h1>
+ <div class="mainbox">
+    <div class="leftside">
+        <select name="select" id="select">
+            <option>--Please Select field--</option>
+            <option value="lebal">Label</option>
+            <option value="input">Input</option>
+            <option value="select">Select</option>
+            <option value="checkbox">Checkbox</option>
+            <option value="radiobox">Radiobox</option>
+            <option value="textarea">Textarea</option>
+            <option value="button">Button</option>
+        </select>
+    </div>
+    <div class="rightside">
+        
+    </div>
+ </div>
+<script>
+    let rightbox = document.querySelector('.rightside');
+    let selectType = document.querySelector('#select');
+
+    selectType.addEventListener('change',(e)=>{
+       console.log(e.target.value)
+       let targetvalue = e.target.value;
+       if(targetvalue === 'input'){
+         let inputCreate = document.createElement('input');
+         inputCreate.placeholder ="Enter Details"; 
+         rightbox.append(inputCreate)
+       }
+       else if(targetvalue === 'lebal'){
+         let createLebal = document.createElement('labal');
+         let lebaltext = prompt("Please Enter Lebal Name");
+         createLebal.innerHTML =lebaltext; 
+         rightbox.append(createLebal)
+       }
+       else if(targetvalue === 'select'){
+         let createSelect = document.createElement('select');
+         let optiontext = prompt("Please Enter Lebal Name");
+         rightbox.append(createSelect)
+       }
+    })
+
+</script>
+</body>
+</html>

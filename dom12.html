@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom12</title>
+    <style>
+        .card {
+            height: 100px;
+            width: 100px;
+            border: 1px solid red;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            background: chocolate;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card addcard">
+            +
+        </div>
+    </div>
+
+    <button class="btnevent">Check Event</button>
+    <button class="btnevent2">Check Event</button>
+    <script>
+        let btnVar = document.querySelector('.btnevent');
+        let btnVar2 = document.querySelector('.btnevent2');
+        btnVar.onclick = (e)=>{
+            console.log('e.type',e.type);
+            console.log(e.clientX, e.clientY);
+            console.log('e.target',e.target)
+            console.log('e.srcElement ',e.srcElement)
+            console.log(e)
+            console.log(e.view)
+
+        }
+       console.log( btnVar.parentElement);
+
+
+
+    
+       function sayhi(){
+        console.log("you click btn function")
+       }
+       btnVar2.addEventListener('click', sayhi)
+       
+    
+
+   let create = document.querySelector('.card')
+   let containertarget = document.querySelector('.container')
+   let countcard = 1
+   create.addEventListener('click',(e)=>{
+     let cardcreate = document.createElement('div');
+     cardcreate.classList.add('card')
+     cardcreate.innerHTML = countcard;
+     countcard++;
+     containertarget.append(cardcreate)
+   })
+    </script>
+</body>
+</html>

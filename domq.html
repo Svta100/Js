@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom </title>
+</head>
+<body>
+<div class="mainclass">
+    <div class="childclass1">
+        <h1 class="siblingclass">child 11</h1>
+        <h1 class="siblingclass">child 12</h1>
+    </div>
+    <div class="childclass2">
+        <h1 class="siblingclass">child 21</h1>
+        <h1 class="siblingclass">child 22</h1>
+        <h1 class="siblingclass">child 23</h1>
+    </div>
+    <div class="childclass3">
+        <h1 class="siblingclass">child 31</h1>
+        <h1 class="siblingclass">child 32</h1>
+        <h1 class="siblingclass">child 33</h1>
+    </div>
+
+</div>
+<div class="childclass3" id="foo">
+    <h1 class="siblingclass" id="id01">child 41</h1>
+    <h1 class="siblingclass" id="id02">child 42</h1>
+    <h1 class="siblingclass" id="id03">child 43</h1>
+</div>
+<div class="childclass4" id="foo">
+    <h1 class="siblingclass" id="id1">child 51</h1>
+    <h1 class="siblingclass" id="id2">child 52</h1>
+    <h1 class="siblingclass" id="id3">child 53</h1>
+</div>
+<script>
+    
+
+    let mainclassvar = document.querySelector('.mainclass');
+      console.dir(mainclassvar);
+      console.log(mainclassvar.childElementCount);
+    
+    let getlastchild = mainclass.childElementCount 
+
+    console.log(getlastchild)
+    
+
+    let childVar = document.querySelectorAll('.siblingclass');
+        childVar.forEach( (e)=>{
+        console.log(e.innerHTML)
+    })
+
+    const myElement = document.getElementById("foo");
+        for (const child of myElement.children) {
+        console.log(child.getAttribute('id'));
+    }
+</script>
+</body>
+</html>

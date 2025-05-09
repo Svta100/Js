@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super key word</title>
+</head>
+<body>
+    <h2><b>Super keyword</b></h2>
+    <p>
+      <i><b>the Super Keyword is used to call the constructor of its parent class to access the parent's properties and methods</b></i>
+    </p>
+    <b>
+        syntax
+        <i>
+            <p>
+                super(args) // call parent constructor
+            </p>
+            <p>
+                super.parentMethod(args){}
+            </p>
+        </i>
+    </b>
+    <script>
+        class Student {
+            constructor(branch, name ,index){
+                this.branch = branch;
+                this.name = name;
+                this.index = index
+            }
+
+            eat(){
+                console.log("student now eating something")
+            }
+            work(){
+                console.log("student now working this time something")
+            }
+        }
+
+        class studentBranch  extends  Student {
+           constructor(branch,name,index){
+            super()
+             //super().eat()
+             //super(name)
+             //super(name,index)
+             //super(branch,name,index)
+             this.name = name;
+             this.index = index;
+           }
+            stubranch(){
+                super.eat()
+                super.work()
+                console.log(`this studenbranch checking `)
+            }
+            stubranch2(){
+                super.eat()
+                super.work()
+                console.log(`this studenbranch checking again by again`)
+            }
+
+        }
+
+        let studentObj = new Student('MCA','vijay', 4011);
+        let studentObj1 = new studentBranch('M.Sc','sunil',4005);
+
+        console.log(studentObj);
+        console.log(studentObj1);
+        console.log(studentObj1.stubranch2())
+
+        console.log(studentObj1.stubranch());
+
+        //studentObj.eat()
+        //studentObj.work()
+    </script>
+</body>
+</html>

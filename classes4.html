@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2>Classes =></h2>
+    class is program-code template for creating objects<br>
+    those object will have some state (variable) & some brhaviour (function) inside it.<br>
+
+    <br>
+    syntax -:
+    <br>
+
+    class myClassName{  <br>
+        constructor(){....}<br>
+        myMethod(){....} <br>
+        myMethod1(){....} <br>
+        myMethod2(){....} <br>
+        myMethod3(){....} <br>
+        myMethod4(){....} <br>
+        myMethod5(){....} <br>
+    }<br>
+    let myObj = new myClassName ()<br>
+    </p>
+    <script>
+        class studentDetails{
+            constructor(marks,className,rollName){
+                this.stuMarks = marks;
+                this.stuClass = className;
+                this.stuRollName = rollName;
+                if(marks <= '35%'){
+                    console.log(rollName ,"you are failed");
+                    console.log(className);
+                }
+                else{
+                    console.log("you are PASS")
+                    
+                }
+            }
+            studentFormSubmit(name){
+                this.fromSubmitStatus = name ;
+                console.log(name ,'Your Form is Submit');
+            }
+            
+            studentFormCancel(name){
+                this.fromCancelStatus = name ;
+                let studentName = 'this use of testing for purposing'
+                console.log(studentName)
+                console.log(name ,'Your Form is Cancel');
+            }
+    
+            studentPending(name){
+                this.pendingName = name;
+                console.log(name , 'Your Form is Pending')
+            }
+    
+    
+        }
+        let student = new studentDetails('70%','MCA',16011);
+        console.log(student);
+        student.studentFormSubmit('Vijay');
+    
+        let student1 = new studentDetails('35%' , 'M.Sc',16013);
+        console.log(student1);
+        student1.studentFormCancel('Rohit');
+    
+        let student2 = new studentDetails('60%' , 'B.Sc',17014);
+        console.log(student2);
+        student2.studentPending('shailesh');
+    
+        let student3 = new studentDetails('80%' , 'M.Sc',17016);
+        console.log(student3);
+        student3.studentPending('sunil');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box color change </title>
+    <style>
+        .boxColor{
+            width: 265px;
+            height: 200px;
+            border: 1px solid #000;
+            border-radius: 6px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .6s;
+            color: #fff;
+            margin-top: 40px;
+        }
+        .mainBOX{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainBOX">
+        <div class="boxColor box1" id="box1">1</div>
+        <div class="boxColor box2" id="box2">2</div>
+        <div class="boxColor box3" id="box3">3</div>
+        <div class="boxColor box4" id="box4">4</div>
+        <div class="boxColor box5" id="box5">5</div>
+    </div>
+    <script>
+        let boxColor1 = document.getElementById('box1');
+        let boxColor2 = document.getElementById('box2');
+        let boxColor3 = document.getElementById('box3');
+        let boxColor4 = document.getElementById('box4');
+        let boxColor5 = document.getElementById('box5');
+       // console.log(boxColor1.innerHTML);
+
+      let allbox = document.querySelectorAll('.boxColor');
+      console.log(allbox.length)
+       let box  = document.querySelector('.box2')
+       console.log(box.offsetWidth)
+        setInterval( ()=>{
+            let lettercode = '0123456789ABCDEF';
+            let code = '#';
+            let randombox = Math.floor(Math.random()*allbox.length);
+            console.log(randombox)
+            for(let i=0; i<6; i++){
+                code+=lettercode[Math.floor(Math.random()*16)]
+                boxColor1.style.backgroundColor = code;
+            }
+            for(let i=0; i<6; i++){
+                code+=lettercode[Math.floor(Math.random()*16)]
+                allbox[randombox].style.backgroundColor = code;
+            }
+        },500);
+        
+    </script>
+</body>
+</html>

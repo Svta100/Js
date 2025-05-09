@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array practies </title>
+    
+</head>
+
+<body>
+<h3>Array method</h3>
+<p>min Value of array: <span id="minvalue"></span></p>
+<p>max Value of array: <span id="maxvalue"></span></p>
+
+<p>Total Array Value : <span id="array"></span></p>
+<p>Total Array Average Value : <span id="averagevalue"></span></p>
+<script>
+    let givenNumber = [56,76,89,43,65,67,43,20];
+    // let minvalue = Math.random(...givenNumber)
+    
+    console.log(givenNumber);
+    let minvalue = givenNumber[0];
+
+    for(i=0; i<givenNumber.length; i++){
+        if(givenNumber[i]<minvalue){
+            minvalue = givenNumber[i]
+        }
+    }
+    let maxvalue = givenNumber[0];
+
+    for(i=0; i<givenNumber.length; i++){
+        if(givenNumber[i]>maxvalue){
+            maxvalue = givenNumber[i]
+        }
+    }
+
+    
+    let allSum = 0;
+
+    for(let val of givenNumber){
+        console.log(val)
+      allSum = allSum + val
+      //allSum +=val
+    }
+    let allSumAvegragevalue = allSum/givenNumber.length;
+    document.getElementById("averagevalue").innerHTML = allSumAvegragevalue;
+    document.getElementById('array').innerHTML = allSum;
+    document.getElementById('minvalue').innerHTML =minvalue
+    document.getElementById('maxvalue').innerHTML =maxvalue
+    
+    console.log(`min value of array ${minvalue} `);
+    console.log(`max value of array ${maxvalue} `);
+
+    console.log(`total value give of array sum value  + ${allSum}`)
+    console.log(`total number of sum of average value + ${allSumAvegragevalue}`);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom project</title>
+    <style>
+        .button{
+            padding: 20px 20px;
+            border-radius: 0px;
+            border: 0px;
+            cursor: pointer;
+        }
+        .clock {
+            background: orange;
+            padding: 20px 10px;
+            font-size: 25px;
+            font-weight: 900;
+            width: 279px;
+            text-align: center;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+
+    </div>
+    <div class="btnmainbox">
+        <button class="button" id="grey"></button>
+        <button class="button" id="red"></button>
+        <button class="button" id="yellow"></button>
+        <button class="button" id="blue"></button>
+        <button class="button" id="purple"></button>
+    </div>
+    <script>
+        
+        let buttons = document.querySelectorAll('.button')
+        let body = document.querySelector('body')
+        console.log(buttons)
+        buttons.forEach( function(button){
+            let bgcolor = button.id;
+            button.style.backgroundColor = bgcolor 
+            console.log(button.id)
+            button.addEventListener('click' , function(e){
+                console.log(e)
+                console.log(e.target.id)
+                if(e.target.id == 'grey'){
+                    body.style.backgroundColor = 'grey'
+                }
+                if(e.target.id == 'red'){
+                    body.style.backgroundColor = 'red'
+                }
+                if(e.target.id == 'yellow'){
+                    body.style.backgroundColor = 'yellow'
+                }
+                if(e.target.id == 'blue'){
+                    body.style.backgroundColor = 'blue'
+                }
+                if(e.target.id == 'purple'){
+                    body.style.backgroundColor = 'purple'
+                }
+                else{
+                    body.style.backgroundColor = 'none'
+                }
+            })
+        })
+
+
+
+        let clocks = document.querySelector('.clock')
+        let date = new Date()
+        console.log(date.toLocaleDateString())
+        setInterval( function(){
+            let date = new Date()
+            //console.log(date.toLocaleTimeString())
+            clocks.innerHTML = date.toLocaleTimeString() + ' ' +date.toLocaleDateString();
+        },1000)
+    </script>
+</body>
+</html>

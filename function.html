@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function test</title>
+</head>
+<body>
+    <h2>function test</h2>
+    <p>sum of the number function <span id="sumoffun"></span></p>
+<script>
+//   let a = "this is"
+//   let a = "fdlfkdl";
+//   console.log(a)
+
+   function myfunction(msg, num){
+    //this is parameter-->input
+    console.log(msg + num)
+   }
+  
+  myfunction('hello function welcome to Js ' ,100) // this is argument
+
+
+  //sum of two number
+
+  function sum(a,b){
+    //-->> local variables scope
+    s = a*b;
+    console.log('before retrun')
+    return s
+  }
+  let val = sum(3,4);
+  document.getElementById('sumoffun').innerHTML= val
+  console.log(val);
+
+</script>
+</body>
+</html>

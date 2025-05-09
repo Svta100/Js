@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype js</title>
+</head>
+<body>
+    <script>
+        let myName = 'vijay   ';
+
+        console.log(myName.split(''));
+        console.log(myName.split(','));
+       
+        //console.log(myName.trim().length)
+        //console.log(myName.trueLength())
+
+
+
+
+        let myheros = ['thor', 'spiderman','hulk','louky'];
+        console.log(myheros)
+
+
+        let heroPower ={
+            thor:'hammer',
+            spiderman:'sling',
+            hulk:'strength',
+            getSpiderPower: function(){
+                console.log(`spidy power is ${this.spiderman}`)
+            }
+        }
+        
+        // prototype method
+
+        Object.prototype.vijayObject = function(){
+            console.log(`this is present in all object`);
+        }
+
+        Array.prototype.vijayArray = function(){
+            console.log('vijay say is hello use for array type is array');
+
+            class vijayclass {
+                constructor(){}
+                vijayeat(){
+                    console.log('vijay eadting for this time');
+                }
+            }
+            let creatclass = new vijayclass();
+            console.log(creatclass.vijayeat());
+        }
+
+        String.prototype.vijayString = function(){
+            console.log('use for string method type is string or type is string')
+        }
+        heroPower.vijayObject()  // Array / Object use for(heropower)
+        //myheros.vijayObject() // Array / Object use for(heropower)
+        myheros.vijayArray()  // Only use for Array (myheros)
+
+        myName.vijayString() // Only use for srting (myName)
+
+
+        console.log(myheros)
+        console.log(myName)
+        console.log(heroPower)
+
+        // inheritance
+
+        const userName = {
+            name : 'vijay',
+            gmail : 'vijay@gamil.com'
+        }
+
+        const Teacher = {
+            makeVideo : true,
+            isTeacher : false
+        }
+        const TeachingSupport = {
+            isAvailable:false,
+        }
+        const TaSupport = {
+            makeAssingnment : 'java script tutorial',
+            isFullTime: true,
+            __proto__ : TeachingSupport
+        }
+
+        Teacher.__proto__ = userName;
+        console.log(Teacher)
+
+
+        // modern syntax
+        //Object.setPrototypeOf(TeachingSupport, TaSupport)
+   
+
+        console.log(TaSupport.isAvailable)
+
+
+        String.prototype.trueLength = function(){
+           console.log(`${this.trim().length}`)
+        }
+        myName.trueLength()
+        console.log(myName)
+
+    </script>
+</body>
+</html>

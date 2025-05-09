@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string-3 </title>
+    
+</head>
+
+<body>
+<h3>Array method</h3>
+<p>My Array Value : <span id="array"></span></p>
+<script>
+    let stu = ['manish','ajay','vishal','arjun','sunil','shailesh'];
+
+    console.log(stu)
+    for(let stuname of stu){
+        console.log(stuname.toUpperCase())
+    }
+    for(let stuname of stu){
+        console.log(stuname.split())
+        document.getElementById('array').innerHTML+= " " + stuname
+    }
+    console.log('this array length -> ' + stu.length)
+
+
+    
+
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 5 splice method</title>
+</head>
+<body>
+    <h2>Array map, filter and foreach practices Method </h2>
+    <p id="toplist"></p>
+
+    <p class="filter" id="filterarr">filter Array</p>
+<script>
+  let myarr = [1,2,3,4,5,6,7,8,9];
+  console.log(myarr);
+   let multiple = myarr.map( function (element){
+        return element*3;
+   })
+   console.log(multiple)
+
+  let array1 = [1,2,3,4,5,6,7,8,9,10,11]
+
+  console.log(array1)
+  let filterMethod = array1.filter(function (ele){
+     return ele % 2 == 0;
+  })
+  console.log(filterMethod)
+
+
+  let array2 = [1,2,3,4,5,6,7,8,9,10,11]
+
+  console.log(array2)
+  let reduceMethod = array2.reduce(function (a, b){
+     return a+b;
+  })
+  console.log(reduceMethod)
+  
+  
+//   let sum =0
+//   for(let val of array2)
+//   {
+//     console.log(val)
+//     sum = sum+val
+//   }
+//   console.log(sum)
+
+
+  let lang =[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+  
+  lang.forEach(function(val){
+    var forvalue = val;
+    if(forvalue > 4){
+       console.log(forvalue)
+       document.getElementById('filterarr').innerHTML += "\t"+forvalue 
+    }
+  })
+
+  let anarray = [1,2,3,[4,5,6],7,[6,7,[4,5]]];
+  let real_antoher = anarray.flat(Infinity)
+  console.log(real_antoher)
+
+   
+
+
+</script>
+</body>
+</html>

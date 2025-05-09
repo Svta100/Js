@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 1</title>
+</head>
+<body>
+    <button onclick="myfuntion()">click</button>
+    <button id="btn" value="valuebtn">Button</button>
+</body>
+<script>
+    for(i=1;i<=100;i++){
+      console.log( "i of value" + " " +i)
+      if(i%5==0){
+        console.table(i)
+      }
+    }
+
+    var btn = document.getElementById("btn");
+    btn.onclick = function(){
+        alert("this button get value")
+    }
+</script>
+</html>

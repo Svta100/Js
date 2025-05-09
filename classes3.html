@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2>Classes =></h2>
+    class is program-code template for creating objects<br>
+    those object will have some state (variable) & some brhaviour (function) inside it.<br>
+
+    <br>
+    syntax -:
+    <br>
+
+    class myClassName{  <br>
+        constructor(){....}<br>
+        myMethod(){....} <br>
+    }<br>
+    let myObj = new myClassName ()<br>
+    </p>
+    <script>
+ 
+
+        class toyataCar {
+           constructor(newbrand , mileage , model ,carprice){
+               console.log('create new object' + newbrand , mileage, model ,carprice);
+               this.newbrands = newbrand;
+               this.carmileage = mileage;
+               this.modelyear = model;
+               this.price = carprice;
+           }
+           startCar(){
+               console.log('car is start');
+           }
+           stopCar(status){
+               console.log('car is start');
+               console.log( status, 'car is stop');
+           }
+           setNewBrandName(brand){
+               this.brandName = brand;
+               console.log("this brand name ", 'model', this.brandName , 'year' , this.modelyear, 'car price' , this.price)
+           }
+        }
+         
+        let fortuner = new toyataCar('top fortuner', 100 ,2024,4500000); //constructor
+        console.log(fortuner);
+        fortuner.setNewBrandName('fartuner');
+       
+        let lexus = new toyataCar('top lexus', 60 ,2023,2000000);//constructor
+        console.log(lexus);
+        lexus.setNewBrandName('lexus');
+       
+        let innova = new toyataCar('top innova', 70 , 2020 ,2500000); //constructor
+        console.log(innova);
+        innova.setNewBrandName('innova');
+       
+       </script>
+</body>
+
+</html>

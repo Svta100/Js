@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <style>
+        .div-bg{
+            height: 200px;
+            width: 300px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-bg" onclick="changBgColor(this)" style="background-color: red;">
+        <p>this bg color</p>
+    </div>
+<script>
+    function changBgColor(element){
+        const currentColor = element.style.backgroundColor;
+        if(currentColor == "red"){
+            element.style.backgroundColor ="green";
+        }
+        else{
+            element.style.backgroundColor ="red"
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array practies </title>
+    
+</head>
+
+<body>
+<h3>Array method</h3>
+<p>Total Array Value : <span id="array"></span></p>
+<p>Total Array Average Value : <span id="averagevalue"></span></p>
+<script>
+    let stuNum = [90,76,43,67,34,56,20,68,98];
+    let sum = 0;
+    console.log(stuNum.sort())
+    for(let numvalue of stuNum){
+      console.log(numvalue);
+      sum += numvalue
+      
+    }
+    let avg = sum/stuNum.length;
+    document.getElementById('averagevalue').innerHTML = avg
+    document.getElementById('array').innerHTML = sum;
+    console.log(`total sum of array -> ${sum}`);
+    console.log(`total average vlaue array -> ${avg}`);
+
+</script>
+</body>
+</html>

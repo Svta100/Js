@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>four div color</title>
+	<style type="text/css">
+		.main{
+			display: flex;
+		}
+		.main div{
+			height: 200px;
+			width:300px;
+			border:2px solid black;
+			margin: 20px;
+			margin-left:50px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="main">
+	<div id="div1"></div>
+	<div id="div2"></div>
+	<div id="div3"></div>
+	<div id="div4"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	 
+	$(document).ready(function(){
+		$('#div1').click(function(){
+		 var x=Math.floor(Math.random()*300);
+		 var y=Math.floor(Math.random()*300);
+		 var z=Math.floor(Math.random()*300);
+		 $('#div1').css("backgroundColor","rgb("+x+","+y+","+z+")");
+		 $('#div2').css("backgroundColor","rgb("+y+","+z+","+x+")");
+		 $('#div3').css("backgroundColor","rgb("+z+","+x+","+y+")");
+		 $('#div4').css("backgroundColor","rgb("+y+","+x+","+z+")");
+
+		});
+		$("#div2").click(function(){
+			var x=Math.floor(Math.random()*300);
+	    	var y=Math.round(Math.random()*300);
+		 	var z=Math.floor(Math.random()*300);
+		 	var text1="0123456789ABCDEF";
+			var clr="#";
+			for( var i=0;i<6;i++){
+			clr=clr + text1[Math.floor(Math.random() *16)];
+		 	}
+			$('#div2,#div3').css("backgroundColor","rgb("+y+","+x+","+z+")");
+		})
+	});
+</script>
+</body>
+</html>

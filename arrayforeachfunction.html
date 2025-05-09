@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array reduce</title>
+    <style>
+        video{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+  <h2>for each function</h2>
+  <!-- <video src="../backupfile 280125/WhatsApp Video 2025-01-29 at 16.18.38.mp4" controls loop></video> -->
+<script>
+    
+    const number = [1,2,3,4,5,6,7,8,9,10,20,23,34,32,43,54,12,23,25,22,30,64,100,45,50]
+
+    let checknumber = number.forEach((num,mul)=>{
+
+        //console.log(num*mul)
+
+        if(num%2==0){
+            console.log(num)
+        }
+        
+    })
+
+
+    let checkmulnumber = number.forEach((num,mul)=>{
+
+      console.log('multiply number', num*mul)
+
+    })
+
+    let monthsName = ['January','February','March','April','May','June','July','Agusth','Spetember','October','November','December']
+
+
+    // this new method of foreach function
+    function getnumber(el,index){
+        console.log(`this foreach value ${index+1} ${el}`)
+    }
+    monthsName.forEach(getnumber)
+
+
+</script>
+</body>
+</html>

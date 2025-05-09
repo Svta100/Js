@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function 2</title>
+</head>
+<body>
+   
+ <h2>function check filter  map and reduce method</h2>
+    
+<script>
+    
+
+   let stuMarks = [65,67,87,98,99,96,87,89]
+   let maxMarks= stuMarks.filter( (marks)=>{
+       //console.log(marks)
+       return marks>80
+
+   })
+   console.log(maxMarks)
+
+
+    let userNumber = prompt('Enter Your Number :')
+    
+    let createarray = []
+
+    for(let i=1; i<=userNumber; i++){
+        createarray[i-1]=i;
+    }
+    console.log('user enter number',createarray)
+
+    let totalsum = createarray.reduce((accuratedvalue,currentvalue)=>{
+        return accuratedvalue+currentvalue
+    })
+
+    console.log('total number sum of array',totalsum)
+
+    let factorialNumber = createarray.reduce( (currentvalueItem, nextValueItem)=>{
+        return currentvalueItem * nextValueItem;
+    })
+    console.log('factorial of array',factorialNumber)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>changebodymode</title>
+    <style>
+        button{
+            padding: 20px 40px;
+            background: red;
+            color: #fff;
+            font-size: 24px;
+            border: 0px;
+        }
+        p{
+            color:#fff;
+        }
+        body{
+            background: #000;
+        }
+        .bg-color{
+            background: #fff;
+        }
+        .active{
+            color:#000;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="changebtn">Change Mode</button>
+
+
+    <h2>change body mode</h2>
+    <p>welcome to my website</p>
+    <p>welcome to my paragraph</p>
+    <p>welcome to my paragraph</p>
+    <p>welcome to my paragraph</p>
+    <p>welcome to my paragraph</p>
+
+<script>
+    let bodycolorchagne = document.querySelector('body');
+    let togglebtn = document.querySelector('button');
+    let pcolor = document.querySelectorAll('p');
+    let count = 0;
+    console.log(pcolor)
+    togglebtn.addEventListener('click',(e)=>{
+        console.log(e);
+        if(count === 0){
+            bodycolorchagne.classList.add('bg-color');
+            pcolor.forEach( (element)=> {
+                element.classList.add('active');
+            });
+            document.querySelector('h2').style.color="#000"
+            count = 1
+       } 
+        else{
+            bodycolorchagne.classList.remove('bg-color');
+            document.querySelector('h2').style.color="#fff"
+                pcolor.forEach( (element)=> {
+                element.classList.remove('active');
+            });
+            count = 0
+        }
+        
+    })
+
+    
+</script>
+</body>
+</html>

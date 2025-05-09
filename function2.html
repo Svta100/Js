@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function 2</title>
+</head>
+<body>
+   
+ <h2>function check filter  map and reduce method</h2>
+    
+<script>
+    function showMessage(a,b){
+        console.log('welcome javascript',a + b )
+        return a+b;
+    }
+
+    showMessage(20,4)
+    showMessage(1,5)
+    showMessage(4,6)
+    showMessage(4,2)
+    showMessage(78,65)
+    showMessage(23,45)
+
+
+
+     function countVowels(str){
+        let count = 0
+        for(let val of str){
+            if(val == 'a' || val == 'e' || val == 'i' || val == 'o' || val == 'u'){
+                count++
+            }
+        }
+        console.log('total vowel count', count)
+     }
+     countVowels('vijaykannaujiya')
+
+
+
+    //if use arrow normal fuction 
+
+    let  countVowel = (str2) =>{
+        let counts = 0
+        for(let val of str2){
+            if(val == 'a' || val == 'e' || val == 'i' || val == 'o' || val == 'u'){
+                counts++
+            }
+        }
+        console.log('total vowel count', counts)
+
+        return counts
+    }
+
+    console.log(countVowel('javascript'))
+    
+
+
+
+    function sumvar1(a,b){
+        console.log('normal function',a*b)
+        return a*b
+    }
+    sumvar1(4,8)
+    sumvar1(8,5)
+
+    let sumArrow = (a,b)=>{
+        return a*b 
+    }
+    console.log('arrow function', sumArrow(5,6))
+
+
+    const string = 'VJIAY'
+    let str3 = string.split('')
+    console.log(str3)
+    console.log(string)
+
+    // let str = "hello javascript"
+    // let str2 = str.split('').reverse().join(',')
+    // console.log(str2)
+
+    // var win = window.location.pathname
+    // if(win == '/Users/gadgetzone/Desktop/JS/function2.html'){
+    //     alert('url are match')
+    // }
+    // else{
+    //     alert('url are not match')
+    // }
+    // console.log(Date().toLocaleString())
+
+
+
+    let arr =[1,2,3,4,5,6,7,8,9]
+    arr.forEach( function valuename(el,ind){
+        console.log('squar vlaue',el*el)
+    })
+    
+ //    new arrow function 
+   let num = [55,43,53,76,78,21,25]
+
+   num.forEach( (ele)=>{
+    console.log('new foreach function squar',ele*ele)
+   })
+
+//    new second arrow function 
+
+   let arr2 = [21,22,23,24,25,26,27,28,29,30]
+   let callwitharrowsquar = (num)=>{
+        console.log(`new foreach function squar ${num}*${num} =>`,num*num)
+   }
+   arr2.forEach(callwitharrowsquar)
+
+
+
+  // map function 
+
+  let maparr = [1,3,5,7,54,56,76,87]
+  console.log(maparr)
+  let maparrdivided = maparr.map(function(mapel){
+    return   mapel*4
+  })
+  console.log(maparrdivided);
+
+
+  // reduce array
+
+  let redvar = [3,4,5,6,7,8,9,1,2];
+  console.log(redvar)
+  let redvarvalue= redvar.reduce((prev,next)=>{
+      return prev +next
+  })
+  console.log("tatal value ",redvarvalue)
+</script>
+</body>
+</html>

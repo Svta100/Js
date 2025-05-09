@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+   
+ <h2>objects singleton</h2>
+ <p>In JavaScript, an object is a collection of key-value pairs (properties) that can store data and functionality, allowing you to represent real-world entities or data structures</p>
+ <p>To test this, try adding the following lines into your code, just below the closing curly brace of the</p>
+
+
+
+ <p>
+    const tinderuser =  new Object();  => this called is singleton objet
+ </p>
+ <p>
+    const tinderuser = {};  => this called is not singleton objet
+ </p>
+<script>
+ //  this called is singleton objet
+ //const tinderuser =  new Object(); 
+ 
+ // this called is not singleton objet
+ //const tinderuser = {}; 
+   
+ const faceBookUser = {}
+
+ faceBookUser.id = 1234;
+ faceBookUser.name = 'VIJAY'
+ faceBookUser.password = 'test@123@#'
+ faceBookUser.isLoggedIn = false
+ 
+ console.log(faceBookUser)
+
+
+
+// i have create new object then
+
+ const finderUser = {
+     id:12332,
+     email:'facebook@gamil.com',
+     password: 'face@123@#',
+     fullname:{
+        userfullname:{
+            firstname:'Shailesh',
+            lastname:'Nirmal'
+        }
+     },
+    address:'mumbai'
+
+ }
+console.log(finderUser);
+console.log('firstname is', finderUser.fullname.userfullname.firstname);
+console.log('lastname is', finderUser.fullname.userfullname.lastname);
+
+
+const obj1 ={1:'a',2:'b',3:'c'};
+const obj2 ={4:'d',5:'e',6:'f'};
+const obj3 ={7:'g',8:'h',9:'i'};
+
+//const obj4 = {obj1,obj2,obj3}
+//const obj4 = Object.assign(obj1 , obj2,obj4)
+//console.log(obj4 === obj1)
+
+
+const obj4 = {...obj1, ...obj2, ...obj3};
+console.log(obj4);
+console.log(obj4[1]);
+console.log(obj4[2]);
+
+
+//  if when incoming value database
+
+const userdata = [
+    {
+        id:1,
+        usermail:'vijay@gmail.com',
+    },
+    {
+        id:2,
+        usermail:'rohit@gmail.com'
+    },
+    {
+        id:3,
+        usermail:'sunil@gmail.com'
+    },
+    {
+        id:4,
+        usermail:'rahul@gmail.com'
+    },
+    {
+        id:5,
+        usermail:'vishal@gmail.com'
+    },
+    {
+        id:6,
+        usermail:'shailesh@gmail.com'
+    }
+
+]
+console.log(userdata);
+//console.table(userdata)
+
+for(let user in userdata){
+    console.log(userdata[user])
+    // console.log(userdata[user].id)
+    // console.log(userdata[user].usermail)
+}
+
+// if you wont to object (KEY AND VALUE ENTRIES) USE this methods
+
+console.log('key',Object.keys(faceBookUser))
+console.log('value',Object.values(faceBookUser))
+console.log('entries',Object.entries(faceBookUser))
+console.log('hasOwnProperty is',faceBookUser.hasOwnProperty('isLoggedIn'))
+
+
+userdata.map( (el)=>{
+    console.log(el.usermail)
+})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super key word</title>
+</head>
+<body>
+    <h2><b>Super keyword</b></h2>
+    <p>
+      <i><b>the Super Keyword is used to call the constructor of its parent class to access the parent's properties and methods</b></i>
+    </p>
+    <b>
+        syntax
+        <i>
+            <p>
+                super(args) // call parent constructor
+            </p>
+            <p>
+                super.parentMethod(args){}
+            </p>
+        </i>
+    </b>
+    <script>
+        
+        class superperson {
+            constructor(branch){
+                console.log('enter your parent constructor')
+                this.species = "home sapiens"
+            }
+            eat(){
+                console.log("eat");
+            }
+        }
+        class superEngineerPerson extends superperson{
+            constructor(branch){
+                console.log('start is child constructor')
+                super() // to invoke parent class constructor
+    // if you do it then generally inside the constructor  using this or exit what we need to do before the super constructor has to be called 
+                this.branch = branch;
+                console.log('exit of child constructor')
+            }
+            work(subject){
+                this.subject = subject;
+                console.log("solve problem, build  super something extra", this.subject);
+
+            }
+        }
+
+        const personObj = new superEngineerPerson("Computer Engineering");
+       personObj.work('bio')
+    </script>
+</body>
+</html>

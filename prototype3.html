@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+   <h1>prototype Practies</h1> 
+   <script>
+        function Animal(name,color){
+           this.name = name;
+           this.color = color;
+           console.log(this.name , 'and' , this.color);
+           //return name
+        }
+        //let aniname = Animal('dog');
+        //console.log(aniname);
+
+
+
+        // Animal.prototype.speak = function(){
+        //     console.log(this.name + ' makes a sound');
+        //     console.log('Is color ' + " " + this.color);
+
+        // }
+        //---------------or wirte this type---------//
+
+        Object.prototype.speak = function(){
+            console.log(this.name + ' makes a sound');
+            console.log('Is color ' + " " + this.color);
+
+        }
+        const  dog = new Animal('Buddy','white');
+        dog.speak()
+
+   </script>
+</body>
+</html>

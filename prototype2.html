@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+   <h1>prototype Practies</h1> 
+   <script>
+
+    const company ={
+        message(){
+            console.log("hello taxt of javascript")
+        }
+    }
+    const usercampany ={
+        name : 'vijay',
+        company :'companyName',
+        empolyeeNumber: 100,
+        __proto__:company,
+        usercampanymessage: function(){
+            console.log(this.name, "hello vijay company")
+        }
+    }
+    usercampany.__proto__ = company;
+    console.log(usercampany.name)
+    console.log(usercampany.usercampanymessage())
+    console.log(usercampany.message());
+    console.log(company.message());
+
+
+
+   </script>
+</body>
+</html>

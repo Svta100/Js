@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+   
+ <h2>objects singleton</h2>
+ <p>In JavaScript, an object is a collection of key-value pairs (properties) that can store data and functionality, allowing you to represent real-world entities or data structures</p>
+ <p>To test this, try adding the following lines into your code, just below the closing curly brace of the</p>
+
+
+
+ <p>
+    const tinderuser =  new Object();  => this called is singleton objet
+ </p>
+ <p>
+    const tinderuser = {};  => this called is not singleton objet
+ </p>
+
+ <div class="userdetails">
+    
+ </div>
+<script>
+ 
+
+   
+
+const userdata = [
+    {
+        id:1,
+        name:'vijay',
+        usermail:'vijay@gmail.com',
+        class:'MCA'
+    },
+    {
+        id:2,
+        name:'rohit',
+        usermail:'rohit@gmail.com',
+        class:'M.Sc'
+    },
+    {
+        id:3,
+        name:'sunil',
+        usermail:'sunil@gmail.com',
+        class:'M.Sc'
+    },
+    {
+        id:4,
+        name:'rahul',
+        usermail:'rahul@gmail.com',
+        class:'B.Sc'
+    },
+    {
+        id:5,
+        name:'vishal',
+        usermail:'vishal@gmail.com',
+        class:'M.SC'
+    },
+    {
+        id:6,
+        name:'shailesh',
+        usermail:'shailesh@gmail.com',
+        class:'B.Sc'
+    }
+]
+console.log(userdata)
+
+// add new more data
+userdata.push({
+    id:7,
+    name:'amit',
+    usermail:'amit@gmail.com',
+    class:'MCA'
+},
+{
+    id:8,
+    name:'rakesh',
+    usermail:'rakesh@gmail.com',
+    class:'MCA'
+}
+)
+
+console.log(Object.keys(userdata))
+console.log(Object.values(userdata))
+//console.log(Object.entries(userdata))
+
+let userdatashow =document.querySelector('.userdetails')
+userdata.map( (el)=>{
+    let createP = document.createElement('p');
+    createP.textContent = el.id + " " + el.name.toUpperCase() + " "+ el.usermail + " "+ el.class;
+    userdatashow.append(createP)
+    console.log(el.id + " " + el.name +" "+ el.usermail +  " "+ el.class);
+})
+
+
+userdata.filter((classfilter, className)=>{
+    if(classfilter.class === 'MCA'){
+        console.log(classfilter.name +" "+ classfilter.usermail)
+    }
+})
+
+</script>
+</body>
+</html>

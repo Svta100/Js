@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Edit and Remove Elements in DOM </h2>
+    <ul class="lang">
+        <li>python</li>
+        <li>javascript</li>
+        <li>java</li>
+    </ul>
+    <input type="text" placeholder="Add language">
+    <button onclick="otherlanguagesadd()">Add</button>
+    <script>
+        function addlang(lang){
+            const ul = document.querySelector('.lang');
+            const li = document.createElement('li');
+            li.innerHTML=lang
+            ul.appendChild(li)
+            console.log(li)
+        }
+        addlang('php')
+        addlang('typescript')
+    
+        function  otherlanguagesadd (){
+            let newtext = document.querySelector('input');
+            let newli = document.createElement('li');
+            newli.appendChild(document.createTextNode(newtext.value))
+            document.querySelector('.lang').appendChild(newli)
+            newtext.value=''
+        }
+        //edit
+       
+        let editli = document.querySelector('li:nth-child(2)');
+        console.log(`edit li ${editli}`)
+
+        let createEditLi = document.createElement('li')
+        createEditLi.textContent ="create list"
+         editli.replaceWith(createEditLi)
+        //remove li
+
+        let lastchild = document.querySelector('li:last-child')
+        lastchild.remove()
+    
+    </script>
+</body>
+</html>

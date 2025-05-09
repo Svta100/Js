@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="theme-color" content="#000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array practies 4</title>
+    
+</head>
+
+<body>
+   <h2>Array shift/unshift/concat/slice/splice method</h2>
+   <p> this original foodItems array -> <span id="foodarray"></span></p>
+   <p> this original drinkItems array -> <span id="drinkarray"></span></p>
+   <p> this original vagitable array -> <span id="vagiarray"></span></p>
+   <p> this original concat array -> <span id="cancatarray"></span></p>
+   <p> this original sorting array -> <span id="sortarray"></span></p>
+   <p id="list"></p>
+<script>
+  let foodItems =['chips','onion','banana','apple','orange','chicco','tost','bread','wheat','rice','lemon']
+  let drinkItems = ['water','coco cola','sprite','slice','mango','fize','bear']
+  let vagitable = ['palak','methi','gajer','flawer','ginger','tamato','beans']
+  
+  //let pushitem = foodItems.push('sugar');
+  let pophitem = foodItems.pop();
+
+
+  let concat = foodItems.concat(drinkItems,vagitable)
+   
+  document.getElementById('foodarray').innerHTML=foodItems;
+  document.getElementById('drinkarray').innerHTML=drinkItems;
+  document.getElementById('vagiarray').innerHTML=vagitable;
+  document.getElementById('cancatarray').innerHTML=concat;
+  document.getElementById('sortarray').innerHTML=concat.sort();
+
+  let arraylist = '<ol>';
+  for(i=1;i<concat.length;i++){
+    let str = concat[i].toUpperCase();
+    arraylist += '<li>'+ concat[i]+'</li>'
+    console.log(` ${i}  ${str} `)
+  }
+  arraylist += '</ol>'
+ document.getElementById('list').innerHTML=arraylist;
+
+  console.log('fooditem',foodItems)
+  console.log('drinkitem',drinkItems)
+  console.log('vagitable',vagitable)
+  console.log('use cancat',concat)
+  let arsort = concat.sort()
+  console.log('if we have do sort',arsort)
+
+  let foodItems2 =['chips','onion','banana','apple','orange','chicco','tost','bread','wheat','rice','lemon']
+  let drinkItems2 = ['water','coco cola','sprite','slice','mango','fize','bear']
+  let vagitable2 = ['palak','methi','gajer','flawer','ginger','tamato','beans']
+  
+  console.log('fooditem2',foodItems2)
+  console.log('drinkitem2',drinkItems2)
+  console.log('vagitable2',vagitable2)
+
+  console.log(vagitable2)
+  //let unshift = vagitable2.unshift('carote');
+  let shift = vagitable2.shift();
+  //console.log(ushift)
+  console.log(shift)
+  console.log(vagitable2)
+
+
+  let heroname =['salman','sharukh','kumar','sunnydeol','akshay','rajkumar','govinda','sunil','anil','mithun','kgf']
+  console.log('herosname ', heroname)
+
+  let slicearray = heroname.slice(2)
+  console.log('Are Use Slice', slicearray)
+
+
+  //let splicearray = heroname.splice()
+  //console.log('Are Use Splice',slpicearray)
+  
+
+// use splice method 
+  //let num =[2,5,7,9,12,67,87,89,34,54,21]
+
+  let num =[1,2,3,101,5,6,7]
+ // let num2 = num;
+  //console.log(num2)
+  console.log('This original array', num)
+  num.splice(2,1,12)
+  console.log('use splice method', num);
+</script>
+</body>
+</html>

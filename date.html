@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date html</title>
+</head>
+<body>
+    <h1>date function</h1>
+    <script>
+        const date = new Date();
+       // const date = new Date('June, 04,2000');
+       console.log(date)
+       console.log( date.toLocaleDateString())
+       console.log( date.toDateString())
+       console.log( date.getDate())
+       console.log( date.getMonth())
+       console.log( date.getFullYear())
+
+       console.log(date.toJSON())
+       console.log(date.toISOString())
+       console.log(date.toLocaleString())
+       console.log(date.toLocaleDateString())
+       console.log(date.toLocaleTimeString())
+       console.log(date.getMinutes())
+
+       console.log(typeof date)
+
+
+
+       //let cratemydate = new Date(1995,8,13)
+       //let cratemydate = new Date(1995,8,13,6,5)
+       //let cratemydate = new Date('1995-08-13')//(yy-mm-dd)
+
+       let cratemydate = new Date('08-13-1995')//(mm-dd-yy)
+       console.log(cratemydate.toDateString());
+       console.log(cratemydate.toLocaleString());
+
+
+       let mytimestamp = Date.now();
+       console.log(mytimestamp);
+       console.log(cratemydate.getTime());
+
+       console.log(Math.floor(Date.now()/1000))
+
+
+       let newdate = new Date()
+       console.log(newdate)
+       console.log("date",newdate.getDate());
+       console.log('month',newdate.getMonth()+1)
+       console.log("day", newdate.getDay())
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom relationship </title>
+    <style>
+        .heading{
+            color: red;
+            font-size: 34px;
+
+        }
+        .mainbox{
+            display: flex;
+        }
+        .mainbox div{
+            padding: 30px 30px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<h1>
+Dom Mainipulating Javascript  Dom Mainipulating Javascript  Dom Mainipulating Javascript 
+</h1>
+<div class="parent">
+    <!-- hello javascript -->
+    <div class="childday">Monday</div>
+    <div class="childday">Tuesday</div>
+    <div class="childday">Wednesday</div>
+    <div class="childday">Thursday</div>
+    <div class="childday">Friday</div>
+    <div class="childday">Saturday</div>
+    <div class="childday">Sunday</div>
+</div>
+
+
+<div class="create">
+
+</div>
+
+<script>
+
+let setAttributeVar = document.querySelector('h1')
+setAttributeVar.setAttribute('class','heading')
+setAttributeVar.setAttribute('id','heading')
+setAttributeVar.setAttribute('type','text')
+
+console.log(setAttributeVar)
+console.log(setAttributeVar.innerHTML)
+
+
+
+let parentVar = document.querySelector('.parent')
+console.log(parentVar)
+console.log(parentVar.children)
+console.log(parentVar.children[1])
+console.log(parentVar.children[1].innerHTML)
+
+
+for (let i = 0; i < parentVar.children.length; i++) {
+    const element = parentVar.children[i].innerHTML;
+    console.log(element)
+}
+parentVar.children[0].style.color='#3F51B5'
+parentVar.children[1].style.color='orange'
+parentVar.children[2].style.color='red'
+parentVar.children[3].style.color='green'
+parentVar.children[4].style.color='blue'
+parentVar.children[5].style.color='yellow'
+parentVar.children[6].style.color='navy'
+
+
+console.log(parentVar.firstElementChild)
+console.log(parentVar.lastElementChild)
+
+
+console.log(`this is firstchild, '${parentVar.firstElementChild.innerHTML}'`)
+console.log(`this is lastchild, '${parentVar.lastElementChild.innerHTML}'`)
+
+let oneday = document.querySelector('.childday');
+console.log(oneday)
+console.log(oneday.parentElement)
+
+console.log(`next sibling ${oneday.nextElementSibling.innerHTML}`)
+console.log(`next sibling ${parentVar.childElementCount}`)
+
+
+console.log('nodes' , parentVar.childNodes)
+
+
+let lastchi = document.querySelector('.parent')
+
+const prevsibling = lastchi.children[2].previousElementSibling;
+console.log(prevsibling)
+const nextsibling = lastchi.children[2].nextElementSibling;
+console.log(nextsibling)
+
+
+
+let mainDiv = document.querySelector('.create')
+let createparent = document.createElement('div')
+createparent.className ="mainbox"
+mainDiv.appendChild(createparent)
+console.log(createparent)
+
+for(let i=1; i<=10; i++){
+    let createchild = document.createElement('div')
+    let addtext = createparent.appendChild(createchild)
+    addtext.append(`hello child ${i}`)
+}
+
+</script>
+</body>
+</html>

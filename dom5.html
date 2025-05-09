@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom relationship </title>
+</head>
+<body>
+    <h1>
+        Dom Mainipulating Javascript
+    </h1>
+    <div class="parent">
+        <div class="childday">Monday</div>
+        <div class="childday">Tuesday</div>
+        <div class="childday">Wednesday</div>
+        <div class="childday">Thursday</div>
+        <div class="childday">Friday</div>
+        <div class="childday">Saturday</div>
+        <div class="childday">Sunday</div>
+    </div>
+<script>
+
+  let getattri = document.querySelector('h1')
+  getattri.setAttribute('class','heading h1')
+  getattri.setAttribute('id','heading')
+  let checkatt = getattri.setAttribute('title' ,'Dom Mainipulating Javascript')
+  
+  let setAttributevar = getattri.getAttribute('id')
+  console.log(setAttributevar)
+
+  if(checkatt == 'hello' ){
+    alert('not')
+  }
+  else{
+    alert('yes')
+  }
+  getattri.getAttribute('class') 
+
+  console.log(getattri)
+
+
+  
+
+</script>
+</body>
+</html>

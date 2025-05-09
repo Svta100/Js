@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 10</title>
+    <style>
+        input{
+            width: 300px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>heading 10 BMI CALCULATION </h1>
+    <form >
+        <div><span>your height:</span><input id="heightval" type="text" placeholder="height"></div>
+        <div><span>your weight:</span><input id="weightval" type="text" placeholder="weight"></div>
+        <button>check me</button>
+        <p id="result"></p>
+
+    </form>
+    <script>
+        let fromvar = document.querySelector('form')
+        fromvar.addEventListener('submit',function(e){
+            e.preventDefault()
+            let heightval = parseInt(document.querySelector('#heightval').value)
+            let weightval = parseInt(document.querySelector('#weightval').value)
+            let resultval = document.querySelector('#result');
+            if( heightval === '' || heightval < 0 || isNaN(heightval)){
+                resultval.innerHTML= `please enter a vaild height ${heightval}`
+            }
+            if( weightval === '' || weightval < 0 || isNaN(weightval)){
+                resultval.innerHTML= `please enter a vaild height ${weightval}`
+            }
+            else{
+                let bmi = (weightval/ ((heightval*heightval)/10000)).toFixed(2)
+
+                resultval.innerHTML= bmi
+            }
+            console.log(heightval)
+            console.log(weightval)
+            console.log(e);
+        })
+    </script>
+</body>
+</html>

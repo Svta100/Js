@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super key word</title>
+</head>
+<body>
+    <h2><b>Super keyword</b></h2>
+    <p>
+      <i><b>the Super Keyword is used to call the constructor of its parent class to access the parent's properties and methods</b></i>
+    </p>
+    <b>
+        syntax
+        <i>
+            <p>
+                super(args) // call parent constructor
+            </p>
+            <p>
+                super.parentMethod(args){}
+            </p>
+        </i>
+    </b>
+    <script>
+        
+        class superperson {
+            constructor(name, index){
+                this.species = "home sapiens"
+                this.name = name;
+                this.index = index;
+            }
+            eat(){
+                console.log("eat");
+            }
+        }
+        class superEngineerPerson extends superperson{
+            constructor(name){
+                super() // to invoke parent class constructor
+                //this.eat()
+ // if you do it then generally inside the constructor  using this or exit what we need to do before the super constructor has to be called 
+            }
+            work(){
+                super.eat()
+                //this.eat()
+                console.log("solve problem, build  super something extra");
+
+            }
+        }
+
+        const personObj = new superEngineerPerson('vijay' ,1);
+        personObj.work()
+    </script>
+</body>
+</html>

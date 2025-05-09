@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom </title>
+</head>
+<body>
+<h1>dom changes script test</h1>   
+<h1>function practies qusetion 4</h1>
+<h2>function practies qusetion 4</h2>
+<h3 id="para">function practies qusetion 1</h3>
+<p class="para">paragraph test javascrript 1</p>
+<p class="para">paragraph test javascrript 2</p>
+<p class="para">paragraph test javascrript 3</p>
+<p class="para">paragraph test javascrript 4</p>
+
+<ul>
+    <li>ABCD</li>
+    <li>EFGH</li>
+    <li>IJKL</li>
+</ul>
+<button class="btn">CLICK HERE</button>
+<div>
+    <h2 class="headeing1">pAperiam aut, eaque ex quas at iure sunt</h2>
+    <h2 class="headeing1">Lorem ipsum dolor sit amet consectetur, at</h2>
+    <h2 class="headeing1">rchitecto fugit aspernatur? Aperiam aut, eaque ex quas at iure sun</h2>
+    <h2 class="headeing1">adipisicing elit. Qui natus quaerat debitis tempore </h2>
+    <h2 class="headeing1">Lorem ipsum dolor sit amet consectetur, at quisquam optio, aspernatur a tenetur esse?</h2>
+</div>
+<div>
+    <h3 class="headeing1">pAperiam aut, eaque ex quas at iure sunt</h3>
+    <h3 class="headeing1">Lorem ipsum dolor sit amet consectetur, at</h3>
+    <h3 class="headeing1">rchitecto fugit aspernatur? Aperiam aut, eaque ex quas at iure sun</h3>
+    <h3 class="headeing1">adipisicing elit. Qui natus quaerat debitis tempore </h3>
+    <h3 class="headeing1">Lorem ipsum dolor sit amet consectetur, at quisquam optio, aspernatur a tenetur esse?</h3>
+</div>
+<p id="para2" class="para">paragraph test javascrript </p>
+<script>
+    const allh2 = document.getElementsByClassName('headeing1')
+    console.log(allh2)
+
+
+   let plist = document.getElementsByTagName('p')
+   console.log(plist);
+
+   let convertarrayP = Array.from(plist)
+   console.log(convertarrayP)
+
+   convertarrayP.forEach( (plist ,idex)=>{
+      plist.innerText=`hello javascript and dom ${idex}`
+      plist.style.color='#fff';
+      plist.style.backgroundColor="green"
+      plist.style.padding='10px'
+
+      if(idex == 2){
+        plist.style.backgroundColor="red"
+        plist.innerText=`this is javascript changes bgcolor and paragraph ${idex}`;
+        plist.setAttribute('width','100px');
+      }
+   })
+
+   let queryVar = document.querySelector('h2')
+   console.log(queryVar)
+
+
+   
+   let queryAllVar = document.querySelectorAll('h3')
+   console.log(queryAllVar)
+   queryAllVar.forEach( (itemh3 ,index)=>{
+        itemh3.innerText = ` useing queryselectorall method ${index}`.toLocaleUpperCase();
+        itemh3.style.color='red';
+        itemh3.style.backgroundColor="yellow"
+        itemh3.style.padding='10px';
+        itemh3.innerHTML.toUpperCase()
+        
+        // let newvar = itemh3.innerText.toUpperCase()
+        // console.log(newvar)
+   })
+</script>
+</body>
+</html>

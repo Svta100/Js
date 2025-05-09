@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic tac game</title>
+    <style>
+     *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+     }
+     body{
+        background: slategrey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+     .game-box {
+        width: 386px;
+        height: 393px;
+        background: pink;
+        border-radius: 10px;
+        padding: 20px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+     .btn-click{
+        padding: 10px 10px;
+        border-radius: 10px;
+        border: 1px solid palevioletred;
+        height: 100px;
+        width: 100px;
+        font-size: 24px;
+        color: darkmagenta;
+        text-transform: uppercase;
+
+     }
+     .tic-tac-game {
+        background: pink;
+        border-radius: 10px;
+        padding: 20px 20px;
+        width: 500px;
+        text-align: center;
+        max-width: 100%;
+        margin: auto;
+    }
+     .tic-tac-game h2{
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 30px;
+        line-height: normal;
+        color: darkmagenta;
+    }
+    .newbtn, .resetbtn{
+        padding: 10px 32px;
+        border: 1px solid darkmagenta;
+        border-radius: 9px;
+        font-size: 18px;
+        text-align: center;
+        text-transform: capitalize;
+        background: darkmagenta;
+        color: #fff;
+    }
+    btn:disabled{
+        background: red;
+    }
+    p{
+        margin-bottom: 20px;
+        color: darkmagenta;
+        font-size: 20px;
+        line-height: normal;
+        letter-spacing: 1px;
+    }
+    .winner-msg{
+        margin-top: 20px;
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="tic-tac-game">
+        <h2>tic tac game</h2>
+        <div class="winner-msg">
+            <p id="winner-id"></p>
+            <button class="newbtn">New Game</button>
+        </div>
+        <div class="game-box">
+            <button class="btn btn-click"></button>
+            <button class="btn btn-click"></button>
+            <button class="btn btn-click"></button>
+            <button class="btn btn-click"></button>
+            <button class="btn btn-click"></button>
+            <button class="btn btn-click"></button>
+            <button class="btn btn-click"></button>
+            <button class="btn btn-click"></button>
+            <button class="btn btn-click"></button>
+        </div>
+        <button class="resetbtn">
+            reset
+        </button>
+    </div>
+    <script>
+        let box = document.querySelectorAll('.btn-click');
+        let reset = document.querySelector('.resetbtn');
+        let newgame = document.querySelector('.newbtn');
+        let winnerbox = document.querySelector('.winner-msg');
+        let winnermsg = document.querySelector('#winner-id')
+        let count = 0
+        let win = false;
+        let player = true // playerO or playerX; 
+
+        let checkpattern = [
+            [0,1,2],
+            [0,3,6],
+            [6,7,8],
+            [3,4,5],
+            [1,4,7],
+            [2,5,8],
+            [0,4,8],
+            [6,4,2]
+        ]
+
+        box.forEach( (boxes)=>{
+            boxes.addEventListener('click', (e)=>{
+                //console.log(e);
+                if(player){
+                    boxes.innerHTML = "O";
+                    player= false;
+                    boxes.style.color="red";
+                    
+                }
+                else{
+                    boxes.innerHTML= "X";
+                    player = true;
+                    boxes.style.color="blue";
+                }
+                boxes.disabled = true;
+                count++;
+                console.log(count);
+                checkWinner();
+
+            })
+        })
+
+        function checkWinner(){
+            for(let winnerpattern of checkpattern){
+                //console.log(winnerpattern)
+                //console.log(winnerpattern[0],winnerpattern[1], winnerpattern[2] )
+                //console.log(box[winnerpattern[0]],box[winnerpattern[1]],box[winnerpattern[2]])
+                let posivalue1 = box[winnerpattern[0]].innerHTML;
+                let posivalue2 = box[winnerpattern[1]].innerHTML;
+                let posivalue3 = box[winnerpattern[2]].innerHTML; 
+                if(posivalue1 != '' && posivalue2 !='' && posivalue3 !=''){
+                    if(posivalue1 === posivalue2 && posivalue2 === posivalue3){
+                        //console.log("winner " ,posivalue1 ,posivalue2 ,posivalue3);
+                        console.log("winner " ,posivalue1);
+                        win = true;
+                        winnershow(posivalue1);
+                    }
+                    else if( count === 9 && win === false ){
+                        drawGame();
+                    }
+                }
+                
+            }
+        }
+        function drawGame(){
+            winnermsg.innerHTML = `Sorry!, Game is Draw`;
+            winnerbox.style.display = "block";
+
+        }
+        function winnershow(winner){
+            winnermsg.innerHTML = `Congratulations, winner is ${winner}`;
+            winnerbox.style.display = "block";
+            disabledboxes();
+           
+        }
+
+        let disabledboxes = ()=>{
+            for( let boxdisables of box ){
+                boxdisables.disabled = true;
+            }
+        }
+
+        let enableBoxes = ()=>{
+            for( let boxenable of box ){
+                boxenable.disabled = false;
+                boxenable.innerHTML='';
+            }
+        }
+
+        const resetGame = ()=>{
+            player= true;
+            enableBoxes();
+            winnerbox.style.display = "none";
+            count = 0;
+            win = false;
+
+        }
+
+        newgame.addEventListener('click',resetGame)
+        reset.addEventListener('click',resetGame)
+
+    </script>
+</body>
+</html>

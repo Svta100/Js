@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2><b>Inheritance</b> =></h2>
+        Inhertance is passing down properties & Method from parent class to child class
+    </p>
+   <p>or "A class created with a class inheritance inherits all the methods from another class:
+
+    "</p>
+    <p>
+        <strong>syntax</strong>
+    </p>
+   
+    <p>
+        <b>
+            class parent{
+
+            }
+        </b>
+    </p>
+    <p>
+        <b>
+            To create a class inheritance, use the extends keyword.
+        </b>
+    </p>
+    <p>
+        <strong>
+            class child  extend parent{
+
+            }
+        </strong>
+    </p>
+
+    <p>
+        <address>
+            if child & parent have same method child's method will be  used  <b>[Method Overriding]</b>
+        </address>
+    </p>
+    <script>
+        class normalPerson {
+            eat(){
+                console.log("person is eat")
+            }
+            sleep(){
+                console.log("person is eat")
+            }
+            work(){
+                console.log("do nothing")
+            }
+        }
+        class engineerPerson extends normalPerson{
+            work(){
+                console.log("problem sovleing and build something")
+            }
+        }
+        class doctorPerson extends normalPerson{
+            work(){
+                console.log("its him treat patients")
+            }
+        }
+    
+        let normalPersonObj = new normalPerson();
+        normalPersonObj.work();
+    
+        let EngineerObj = new engineerPerson();
+        EngineerObj.work();
+        EngineerObj.eat();
+    
+        let doctorPersonObj = new doctorPerson();
+        doctorPersonObj.work()
+    </script>
+</body>
+
+</html>

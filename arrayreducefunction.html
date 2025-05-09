@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array reduce</title>
+    <!-- <script src="./console.js"></script>
+    <script src="./script.js"></script> -->
+</head>
+<body>
+  <h2>reduce function</h2>
+<script>
+    
+    const number = [1,2,3,4,5,6,7,8,9,10,20,23,34,32,43,54,12,23,25,22,30,64,100,45,50]
+
+
+   //const number = [1,2,3]
+
+    console.log(number)
+
+    const newNumberSum = number.reduce( (accumulator,current, i)=>{
+        console.log(`${accumulator} + ${current} ==>`, accumulator, current )
+        console.log(accumulator , current)
+        return accumulator + current
+    },0)
+   console.log("total number ", newNumberSum)
+  
+    
+    let checknumber = number.forEach((num,mul)=>{
+
+        //console.log(num*mul)
+
+        if(num%2==0){
+            console.log(num)
+        }
+        
+    })
+
+
+    let checkmulnumber = number.forEach((num,mul)=>{
+
+      console.log('multiply number', num*mul)
+
+    })
+
+    // this new method of foreach function
+    function getnumber(el){
+        console.log(`this foreach value ${el}`)
+    }
+    number.forEach(getnumber)
+
+
+</script>
+</body>
+</html>

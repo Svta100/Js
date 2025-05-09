@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array practies </title>
+    
+</head>
+
+<body>
+<h3>Array method</h3>
+<p>Total Array Value : <span id="array"></span></p>
+<p>ofter get 10% discount Array  Value : <span id="averagevalue"></span></p>
+<script>
+    let price = [240, 340,350,450,567,234,567,654];
+    console.log(price)
+    document.getElementById('array').innerHTML=price
+    let offer = []
+    for(i=0;i<price.length;i++){
+      offer = price[i]/10;
+      price[i] = price[i]-offer;
+   } 
+  document.getElementById('averagevalue').innerHTML=price
+
+  console.log(price)
+  console.log(`after add 10% discount ${price}`)
+    
+  
+
+</script>
+</body>
+</html>

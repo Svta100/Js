@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom </title>
+</head>
+<body>
+   
+ <h2>function practies qusetion 4</h2>
+<p id="para" class="para">paragraph test javascrript</p>
+<p id="para" class="para">paragraph test javascrript</p>
+<p id="para" class="para">paragraph test javascrript</p>
+<script>
+    console.dir(document.location)
+    console.dir(document.location.href)
+    console.log(document.body)
+    console.log(document.head)
+    console.dir(document.body.childNodes[1]);
+    document.body.childNodes[1].innerText="hey hello"
+
+
+    let strip = document.querySelectorAll('p');
+    console.log(strip)
+    let paragraphlimit = document.getElementsByClassName("para");
+
+    strip.forEach((plimit ,i)=>{
+      console.log(paragraphlimit)
+       let stringlimit = plimit.textContent;
+       paragraphlimit[i]+= stringlimit.slice(0,10)+ '.....';
+       
+    })
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 3</title>
+    <style>
+        .div-bg{
+            height: 200px;
+            width: 300px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #fff;
+        }
+        .btn{
+            padding: 10px 10px;
+            border-radius: 6px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-bg" id="changebg" style="background-color: red;">
+        <p>this bg color</p>
+    </div>
+
+    <button class="btn" onclick="togglebg()">ToggleColor</button>
+<script>
+    var currentColor = document.getElementById("changebg");
+    function togglebg(){
+        if(currentColor == 'red'){
+            currentColor.style.backgroundColor ="green";
+        }
+        else{
+            currentColor.style.backgroundColor ="red";
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 5</title>
+    <style>
+        .changecolorbox{
+            height: 300px;
+            width: 400px;
+            max-width: 100%;
+            border: 1px solid blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <select id="city">
+        <option value="Mumbai">Mumbai</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Pune">Pune</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Bhopal">Bhopal</option>
+        <option value="Jaipur">Jaipur</option>
+        <option value="Varanasi">Varanasi</option>
+    </select>
+    <p>This Selected City Name : <span id="cityName"></span></p>
+
+
+    <select id="color">
+        <option value="green" selected>Green</option>
+        <option value="red">Red</option>
+        <option value="purple">Purple</option>
+        <option value="gray">Gray</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">yellow</option>
+        <option value="black">Black</option>
+    </select>
+    <p>This Selected City Name : <span id="colorName"></span></p>
+    <div class="changecolorbox" id="changecolorbox" style="background-color: darkorchid;"></div>
+<script>
+var selectBtn = document.getElementById("city");
+selectBtn.addEventListener("change", function (){
+    const selectval = document.getElementById("city").value;
+    document.getElementById("cityName").innerHTML= selectval;                                                
+})
+var selectBtn = document.getElementById("color");
+selectBtn.addEventListener("change", function (){
+    const selectval = document.getElementById("color").value;
+    document.getElementById("colorName").innerHTML= selectval;  
+    document.getElementById("changecolorbox").style.backgroundColor = selectval;                                                
+})
+</script>
+</body>
+</html>

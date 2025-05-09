@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FullPage.js Demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .section {
+            text-align: center;
+            font-size: 3em;
+            font-family: Arial;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 22px;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Custom Arrows */
+        .custom-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 24px;
+            user-select: none;
+        }
+
+        .custom-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .custom-arrow-left {
+            left: 20px;
+        }
+
+        .custom-arrow-right {
+            right: 20px;
+        }
+
+        /* Active slide styling */
+        .fp-slide.active {
+            border: 2px solid #ff00d5;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Fullpage.js Structure -->
+<div id="fullpage">
+    <!-- First Section -->
+    <div class="section">
+        <h1>FullPage.js</h1>
+        <p>This is the first section.</p>
+    </div>
+
+    <!-- Second Section with Horizontal Slides -->
+    <div class="section">
+        <!-- Custom Arrows -->
+        <div class="custom-arrow custom-arrow-left" onclick="moveLeft()">
+            &#9664;
+        </div>
+        <div class="custom-arrow custom-arrow-right" onclick="moveRight()">
+            &#9654;
+        </div>
+
+        <div class="slide">
+            <h2>Slide 1</h2>
+            <p>This is the first slide of the second section</p>
+        </div>
+        <div class="slide">
+            <h2>Slide 2</h2>
+            <p>This is the second slide of the second section</p>
+        </div>
+        <div class="slide">
+            <h2>Slide 3</h2>
+            <p>This is the last slide of the second section</p>
+        </div>
+        <div class="slide">
+            <h2>Slide 4</h2>
+            <p>This is the last slide of the second section</p>
+        </div>
+        <div class="slide">
+            <h2>Slide 5</h2>
+            <p>This is the last slide of the second section</p>
+        </div>
+    </div>
+
+    <!-- Third Section -->
+    <div class="section">
+        <h2>FullPage.js</h2>
+        <p>This is the third section</p>
+    </div>
+
+    <!-- Fourth Section -->
+    <div class="section">
+        <h2>FullPage.js</h2>
+        <p>This is the fourth section</p>
+    </div>
+</div>
+
+<!-- Fullpage.js Script -->
+<script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+<script>
+    // Initialize fullPage.js
+    new fullpage('#fullpage', {
+        sectionsColor: ['#ffdd57', '#ffa500', '#c0c0c0', '#add8e6'],
+        anchors: ['first-slide', 'second-slide', 'third-slide', 'fourth-slide'],
+        navigation: true,
+        slidesNavigation: true,
+        controlArrows: false, // Disable default arrows
+        scrollingSpeed: 700,
+
+        // Disable looping
+        loopHorizontal: false, // No loop for horizontal slides
+        loopBottom: false, // No loop to top from last section
+        loopTop: false, // No loop to bottom from first section
+
+        afterSlideLoad: function (section, origin, destination) {
+            // Add active class to the current slide
+            document.querySelectorAll('.fp-slide').forEach(slide => slide.classList.remove('active'));
+            destination.item.classList.add('active');
+        }
+    });
+
+    // Move to the left slide or previous section if first slide
+    function moveLeft() {
+        const section = fullpage_api.getActiveSection(); // Get the current section
+        const activeSlide = section.item.querySelector('.fp-slide.active');
+        const allSlides = section.item.querySelectorAll('.fp-slide');
+        const isFirstSlide = activeSlide === allSlides[0];
+
+        if (isFirstSlide) {
+            // If it's the first slide, go to the previous section
+            fullpage_api.moveSectionUp();
+        } else {
+            // Otherwise, go to the previous slide
+            fullpage_api.moveSlideLeft();
+        }
+    }
+
+    // Move to the right slide or next section if last slide
+    function moveRight() {
+        const section = fullpage_api.getActiveSection(); // Get the current section
+        const activeSlide = section.item.querySelector('.fp-slide.active');
+        const allSlides = section.item.querySelectorAll('.fp-slide');
+        const isLastSlide = activeSlide === allSlides[allSlides.length - 1];
+
+        if (isLastSlide) {
+            // If last slide, go to the next section
+            fullpage_api.moveSectionDown();
+            console.log(isLastSlide)
+        } else {
+            // Otherwise, go to the next slide
+            fullpage_api.moveSlideRight();
+        }
+    }
+</script>
+
+</body>
+</html>

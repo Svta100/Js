@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function test</title>
+</head>
+<body>
+    <h1>function Question</h1>
+  <script>
+   
+   // if use normal function then
+   
+    function countVowels(str){
+        let count = 0
+        for(let charval of str ){
+            if(charval ==='a' || charval ==='e' || charval ==='i' || charval==='o' || charval ==='u'){
+               count++;
+            }
+        }
+        //console.log(count)
+        return count
+    }
+    console.log('use the normal function count of vowels',countVowels('Hello Javascript'))
+
+
+    // if use arrow function then
+
+   
+
+    const countVowelsArrow = (strArrow)=>{
+        let countarrow = 0
+        for(let valchar of strArrow){
+            if(valchar === 'a' || valchar =='e' || valchar=='i' || valchar == 'o' || valchar == 'u'){
+                countarrow++
+            }
+
+        }
+        return countarrow
+    }
+    console.log('use the arrow function count of vowels',countVowelsArrow('Hello Javascript'))
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype js</title>
+</head>
+<body>
+    <script>
+       
+
+
+        let myheros = ['thor', 'spiderman','hulk','louky'];
+        console.log(myheros)
+        
+        // prototype method
+
+        Object.prototype.vijayObject = function(){
+            console.log(`this is present in all object`);
+        }
+
+        Array.prototype.vijayArray = function(){
+            console.log('vijay say is hello use for array type is array');
+
+            class vijayclass {
+                constructor(){}
+                vijayeat(){
+                    console.log('vijay eadting for this time');
+                }
+            }
+            let creatclass = new vijayclass();
+            console.log(creatclass.vijayeat());
+        }
+        
+        myheros.vijayArray()
+        
+    </script>
+</body>
+</html>

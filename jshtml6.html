@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 6</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .box{
+            height: 400px;
+            width: 500px;
+            background-color: darkgreen;
+        }
+        select {
+            height: 50px;
+            width: 100px;
+            padding: 0px 8px;
+            font-size: 12px;
+            line-height: 18px;
+            border-radius: 8px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <select id="select">
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+        <option value="darkblue">Darkblue</<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 6</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .box{
+            height: 400px;
+            width: 500px;
+            background-color: darkgreen;
+        }
+        select {
+            height: 50px;
+            width: 100px;
+            padding: 0px 8px;
+            font-size: 12px;
+            line-height: 18px;
+            border-radius: 8px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <select id="select">
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+        <option value="darkblue">Darkblue</option>
+        <option value="darkgreen">Darkgreen</option>
+    </select>
+    <p>This box color change <span id="boxColor"></span></p>
+    <div class="box" id="box">
+
+    </div>
+    <script>
+        var colorSelect = document.getElementById("select");
+        colorSelect.addEventListener("change",function(){
+        const colorBox = document.getElementById("select").value;
+        var para = document.getElementById("boxColor");
+        para.innerHTML = colorBox;
+        para.style.textTransform = "capitalize"
+        document.getElementById("box").style.backgroundColor = colorBox;
+
+        if(colorBox == 'red'){
+            alert("your selected color red")
+        }
+
+       })
+    </script>
+</body>
+</html>option>
+        <option value="darkgreen">Darkgreen</option>
+    </select>
+    <p>This box color change <span id="boxColor"></span></p>
+    <div class="box" id="box">
+
+    </div>
+    <script>
+        var colorSelect = document.getElementById("select");
+        colorSelect.addEventListener("change",function(){
+        const colorBox = document.getElementById("select").value;
+        var para = document.getElementById("boxColor");
+        para.innerHTML = colorBox;
+        para.style.textTransform = "capitalize"
+        document.getElementById("box").style.backgroundColor = colorBox;
+
+        if(colorBox == 'red'){
+            alert("your selected color red")
+        }
+
+       })
+    </script>
+</body>
+</html>

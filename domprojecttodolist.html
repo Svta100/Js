@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-div {
+            padding: 24px 24px;
+            background: #000;
+            border: 1px solid sandybrown;
+            width: 430px;
+            text-align: center;
+            border-radius: 20px;
+            color: #fff;
+            margin: auto;
+        }
+        input{
+            width: 245px;
+            height: 50px;
+            padding: 0px 10px;
+            border-radius: 6px;
+            border: 0px;
+            transition: all 5s;
+        }
+        ::placeholder{
+            color:red
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            border-radius: 8px;
+            border: 0px;
+            background: #17ecdc;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .tasklist{
+            width: 370px;
+            margin: auto;
+            text-align: left;
+            padding-left: 0px;
+            list-style: circle;
+        }
+        li {
+            text-align: left;
+            padding: 15px 10px;
+            background: #fff;
+            color: #000;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        li p{
+            margin: 0px;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+   <div class="main-div">
+      <h1>To do List</h1>
+      <div>
+        <input type="text" id="inputid" value="" placeholder="Please Type Here!">
+        <button class="btn" id="btnadd">Add</button>
+        <div class="task-list">
+            <h4>Task List</h4>
+          <div class="addlist">
+             <ul class="tasklist">
+             </ul>
+          </div>
+        </div>
+      </div>
+   </div>
+   <script>
+       document.querySelector(".btn").addEventListener('click', (el)=>{
+          //console.log(el);
+          let ullist = document.querySelector('.tasklist')
+          let inputField = document.getElementById('inputid');
+          let inputval = inputField.value;
+          let createli = document.createElement('li')
+          if(inputval !== ''){
+            console.log(inputval)
+            createli.innerHTML = `<p>${inputval}</p>`
+            ullist.append(createli)
+            inputField.value=''
+          }
+          else{
+            alert("please Enter Input Box")
+          } 
+       })
+
+    // delete list
+
+    let deleteli = document.querySelector('.tasklist')
+    deleteli.addEventListener('click',function(e){
+        //fconsole.log(e.target.tagName)
+        if(e.target.tagName === 'P'){
+          deletelist = e.target.parentNode
+          console.log(e.target.parentNode)
+          deletelist.remove()
+        }
+    })
+       
+   </script>
+</body>
+</html>

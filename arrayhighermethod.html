@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select{
+            border: 1px solid darkmagenta;
+            padding: 10px 10px;
+            width: 200px;
+            font-size: 15px;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+
+        li{
+            text-transform: capitalize;
+            color: darkmagenta;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <select id="selectopition">
+        <option>--please select here!--</option>
+        <option value="food">food</option>
+        <option value="drink">drink</option>
+        <option value="Oils">Oils</option>
+        <option value="snacks">snacks</option>
+    </select>
+    
+    <div>
+    Result: <ol class="ullist">  </ol>
+    </div>
+    <script>
+       
+        let groceryshop=[
+            {
+                id:1,
+                item:"milk",
+                price:200,
+                Instock:"Available",
+                itemsold:100,
+                itemtype: "drink",
+            
+
+            },
+            {
+                id:2,
+                item:"biscuits",
+                price:150,
+                Instock:"Available",
+                itemsold:150,
+                itemtype: "biscuits",
+            },
+            
+            {
+                id:3,
+                item:"Namkin",
+                price:250,
+                Instock:"outofstock", 
+                itemsold:50,
+                itemtype:"food",
+                comingsoon:"comingsoon",
+            },
+            {
+                id:4,
+                item:"coconet",
+                price:50,
+                Instock:"outofstock",
+                itemsold:80,
+                itemtype:"Oils",
+                comingsoon:"comingsoon",
+ 
+            },
+            {
+                id:5,
+                item:"Bread",
+                price:300,
+                Instock:"Available",
+                itemsold:60, 
+                itemtype:"pulses",
+            },
+            {
+                id:6,
+                item:"seafood",
+                price:400,
+                Instock:"outofstock",
+                itemsold:210,
+                itemtype:"Oils",
+                comingsoon:"comingsoon",
+            },
+            {
+                id:7,
+                item:"pasta",
+                price:80,
+                Instock:"Available",
+                itemsold:120,
+                itemtype:"pulses", 
+            },
+            {
+                id:8,
+                item:"Rice",
+                price:500,
+                Instock:"outofstock",
+                itemsold:45,
+                itemtype:"food",
+                comingsoon:"comingsoon",
+            },
+            {
+                id:9,
+                item:"Cheese",
+                price:350,
+                Instock:"Available",
+                itemsold:50, 
+                itemtype:"snacks", 
+
+            },
+            {
+                id:10,
+                item:"Salad",
+                price:450,
+                Instock:"Available",
+                itemsold:80,
+                itemtype:"snacks", 
+
+            },
+            {
+                id:11,
+                item:"Oils",
+                price:600,
+                Instock:"outofstock", 
+                itemsold:98,
+                itemtype:"Oils",
+            },
+            {
+                id:12,
+                item:"Eggs",
+                price:350,
+                Instock:"Available", 
+                itemsold:47,
+                itemtype:"food",
+            },
+            {
+                id:13,
+                item:"dairy",
+                price:245,
+                Instock:"Available",
+                itemsold:80,
+                itemtype:"snacks", 
+            },
+            {
+                id:14,
+                item:"flour",
+                price:600,
+                Instock:"outofstock",
+                itemsold:54,
+                itemtype:"snacks", 
+                comingsoon:"comingsoon",
+            },
+            {
+                id:15,
+                item:"honey",
+                price:500,
+                Instock:"Available", 
+                itemsold:85,
+                itemtype:"snacks",
+            },
+            {
+                id:16,
+                item:"suger",
+                price:150,
+                Instock:"outofstock", 
+                itemsold:80,
+                itemtype:"food",
+                comingsoon:"comingsoon",
+            },
+            {
+                id:17,
+                item:"Salt",
+                price:50,
+                Instock:"Available", 
+                itemsold:36,
+                itemtype:"food",
+            },
+            {
+                id:18,
+                item:"Yogurt",
+                price:520,
+                Instock:"Available", 
+                itemsold:65,
+                itemtype:"food",
+            },
+            {
+                id:19,
+                item:"Popcorn pack",
+                price:100,
+                Instock:"Available", 
+                itemsold:200,
+                itemtype:"snacks",
+
+            },
+            {
+                id:20,
+                item:"Popcorn Normal",
+                price:300,
+                Instock:"Available", 
+                itemsold:200,
+                itemtype:"snacks",
+            },
+            {
+                id:21,
+                item:"Lays Chips",
+                price:100,
+                Instock:"outofstock", 
+                itemsold:200,
+                itemtype:"snacks",
+
+            },
+            {
+                id:22,
+                item:"Cold Drink",
+                price:100,
+                Instock:"outofstock", 
+                itemsold:300,
+                itemtype:"drink",
+
+            },
+            {
+                id:23,
+                item:"Onion",
+                price:300,
+                Instock:"Available", 
+                itemsold:400,
+                itemtype:"food",
+
+            },
+            {
+                id:24,
+                item:"Nirama",
+                price:200,
+                Instock:"outofstock", 
+                itemsold:230,
+                itemtype:"Daily Use",
+
+            },
+            {
+                id:25,
+                item:"Makhana",
+                price:200,
+                Instock:"Available", 
+                itemsold:500,
+                itemtype:"food",
+
+            }, 
+            {
+                id:26,
+                item:"Maggi",
+                price:250,
+                Instock:"Available", 
+                itemsold:300,
+                itemtype:"food",
+
+            },
+            {
+                id:27,
+                item:"Pasta",
+                price:200,
+                Instock:"outofstock", 
+                itemsold:200,
+                itemtype:"food",
+
+            },
+            {
+                id:28,
+                item:"Dahi",
+                price:270,
+                Instock:"Not Available", 
+                itemsold:100,
+                itemtype:"food",
+
+            }, 
+            {
+                id:29,
+                item:"Butter",
+                price:260,
+                Instock:"Available", 
+                itemsold:500,
+                itemtype:"food",
+
+            },
+            {
+                id:30,
+                item:"Ghee",
+                price:1560,
+                Instock:"outofstock", 
+                itemsold:500,
+                itemtype:"food",
+
+            }
+            ,
+            {
+                id:31,
+                item:"Butter",
+                price:2000,
+                Instock:"outofstock", 
+                itemsold:1000,
+                itemtype:"Oils",
+
+            } 
+            ,
+            {
+                id:32,
+                item:"Mayonnaise",
+                price:1160,
+                Instock:"outofstock", 
+                itemsold:400,
+                itemtype:"Oils",
+
+            },
+            {
+                id:33,
+                item:"Dettol",
+                price:160,
+                Instock:"outofstock", 
+                itemsold:400,
+                itemtype:"Liquids",
+            } 
+            ,{
+                id:34,
+                item:"Savlon",
+                price:160,
+                Instock:"Available", 
+                itemsold:400,
+                itemtype:"Liquids",
+
+            } 
+            ,{
+                id:35,
+                item:"Alvera",
+                price:1260,
+                Instock:"Available", 
+                itemsold:800,
+                itemtype:"Liquids",
+
+            }
+            ,{
+                id:36,
+                item:"Samppoo",
+                price:460,
+                Instock:"Available", 
+                itemsold:850,
+                itemtype:"Liquids",
+            } 
+            ,{
+                id:37,
+                item:"Surf Excel",
+                price:360,
+                Instock:"Available", 
+                itemsold:830,
+                itemtype:"Liquids",
+            } 
+            ,{
+                id:38,
+                item:"Lizol",
+                price:360,
+                Instock:"outofstock", 
+                itemsold:830,
+                itemtype:"Liquids",
+            }     
+            ,{
+                id:39,
+                item:"Nimyle Floor Cleaner",
+                price:330,
+                Instock:"Available", 
+                itemsold:230,
+                itemtype:"Liquids",
+            }     
+            ,{
+                id:40,
+                item:"Britannia Rusk",
+                price:360,
+                Instock:"Available", 
+                itemsold:830,
+                itemtype:"snacks",
+            }         
+
+        ]
+
+
+
+    console.log(groceryshop)
+    console.log("this is item are Available")
+    groceryshop.forEach( (el)=>{
+        if(el.Instock === 'Available'){
+            console.log(el.item)
+        }
+
+    })
+    // console.log("Q.2 total available items amount")
+    // let totalitemAvailable = groceryshop.filter( (totalitem)=>{
+    //     return totalitem.Instock === 'Available';
+    // }) 
+    // let totalprice =totalitemAvailable.reduce( (sumAllPrice ,itemPrice)=>{
+    //     return sumAllPrice += itemPrice.price 
+    // },0)  
+    // console.log('Total Amount : ', totalprice)
+    // console.log("Q.3 total outOfStocks items amount")
+     
+
+
+    let resultvalue = document.querySelector(".ullist")
+    let selectvalue = document.querySelector('#selectopition');
+    
+       selectvalue.addEventListener('change', (e)=>{
+       resultvalue.innerHTML = ''
+       let getnameitem = e.target.value;
+       console.log(getnameitem)
+       groceryshop.forEach((getFilterValue)=>{
+          let createli = document.createElement('li');
+          if(getFilterValue.itemtype === getnameitem){
+            createli.textContent =getFilterValue.item;
+            resultvalue.append(createli)
+            console.log('filter item' , getFilterValue.item)
+          }
+        })
+
+    })
+
+
+   groceryshop.filter((elitem, elindex)=>{
+        if(elitem.price >= 300){
+            console.log(elindex , elitem.item, elitem.price)
+        }
+   })
+
+
+   const number = [1,2,3,4,5,6,7,8,9,10,20,23,34,32,43,54,12,23,25,22,30,64,100,45,50]
+
+    number.reduce((accumulator, current,i)=>{
+        console.log(accumulator+current);
+        return accumulator+current
+    },0)
+    </script>
+</body>
+</html>

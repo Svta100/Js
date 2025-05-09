@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 5 splice method</title>
+</head>
+<body>
+    <h2>Array map, filter , reduce and foreach practices Method 5 </h2>
+    <p id="toplist"></p>
+
+    <p class="filter" id="filterarr">filter Array</p>
+<script>
+  let mynums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+
+  mynums.reduce( (num)=>{
+     if(num<4){
+        console.log(num)
+     }
+  })
+
+
+//  for foreach  function
+  let mynum = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+   console.log(mynum)
+  let newnum =[]
+
+  mynum.forEach( element => {
+    if(element>4){
+        newnum.push(element)
+    }
+  });
+
+  console.log(newnum)
+  let csplice = mynum.splice(4,5,5,5);
+  console.log(mynum)
+  console.log(csplice);
+  
+
+// for map fuction
+  let myarr1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+  
+  console.log('for Map function of Array', myarr1);
+
+ let mapArray = myarr1.map( (valueA , valueB )=>{
+        console.log(valueA + valueB)
+        return valueA + valueB
+  })
+  console.log('simple Array ', myarr1);
+  console.log('for Map function of Array', mapArray);
+
+
+  // for filter fuction
+  let filarr1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+  console.log('simple give filter Aarray' ,filarr1)
+
+  let afterFiterArray = filarr1.filter(function(filItem){
+    //   if(filItem >4){
+    //     console.log(filItem)
+    //   }
+    return filItem > 4
+  })
+  console.log('After filter Apply Function filItem > 4', afterFiterArray)
+
+
+  // for reduce  function
+  let reducearr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+  console.log('simple give filter Aarray' ,reducearr);
+
+  //const reduce_function =(ar1,ar2)=>{
+  //  return ar1+ ar2
+  //}
+
+ // reduceItemVar = reducearr.reduce(reduce_function )
+   
+  reduceItemVar = reducearr.reduce(function(reduceItemA, reduceItemB ){
+    return reduceItemA + reduceItemB 
+  })
+  console.log('After Apply Reduce Function',reduceItemVar)
+
+
+  
+
+</script>
+</body>
+</html> 

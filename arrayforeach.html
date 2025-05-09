@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array for each</title>
+</head>
+<body>
+  
+<script>
+    let herosName = ['salmankan','sharukh khan','ajay' ,'sunny','rajkumar rao','vivek','jackey','govinda','prabhash','alluarjun','ramcharan','ntr','mahesh','raviteja','pawankalyan']
+    console.log(herosName)
+   
+   let newheroName = [] 
+
+   let varfor = herosName.forEach( (items ,ind) => {
+        newheroName.push(items.toUpperCase()) 
+    })
+
+    console.log(newheroName)
+
+
+</script>
+</body>
+</html>

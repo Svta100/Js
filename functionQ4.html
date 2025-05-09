@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function 2</title>
+</head>
+<body>
+   
+ <h2>function practies qusetion 4</h2>
+<p id="para" class="para">paragraph test javascrript</p>
+<p id="para" class="para">paragraph test javascrript</p>
+<p id="para" class="para">paragraph test javascrript</p>
+<script>
+//   let pvar = document.querySelectorAll('.para');
+//   console.log(pvar)
+//   let slice = pvar.substring(0,12)+'....'
+//   console.log(slice)
+  
+ document.addEventListener('DOMContentLoaded',function(){
+    let pvar = document.querySelectorAll(".para");
+    let text2 = pvar.forEach(function(p){
+        let text = p.textContent.trim();
+        let maxlength = 12;
+        p.textContent = text.length > maxlength ? text.substring(0,maxlength) + '....' : text;
+    })
+    console.log(text2)
+ })
+
+
+
+ let array = [1,3,5,7,8,9,0,12,45,67,2,13,4,6,10,11];
+
+ console.log(array)
+
+ let newArray = array.sort(function(a,b){
+    return a-b
+ }).forEach( (a)=>{
+     a%2==0
+ })
+ console.log(newArray)
+</script>
+</body>
+</html>

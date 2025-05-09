@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new key work prototype js</title>
+</head>
+<body>
+    <script>
+         function multiplyby5(usernum){
+            return usernum*5;
+        }
+        console.log(multiplyby5(6));
+        console.log(multiplyby5.power*2);
+        console.log(multiplyby5.prototype);
+
+
+        function createUser(username , userscore) {
+            this.usernamevar = username;
+            this.userscorevar = userscore;
+            // console.log(usernamevar);
+            // console.log(userscorevar);
+        }
+
+        // createUser('Vijay', 78);
+        // createUser('rohit', 89);
+
+
+
+        createUser.prototype.scoreIncrement = function(){
+            this.userscorevar++;
+            console.log(`score is ${this.userscorevar}`)
+        }
+        createUser.prototype.printName = function(){
+            this.usernamevar;
+            console.log(`name is ${this.usernamevar}`)
+        }
+
+
+        const userNameScore1 = new createUser('sunil', 72) 
+        const userNameScore2 = new createUser('rahul', 71) 
+
+        userNameScore1.printName()
+        userNameScore1.scoreIncrement()
+    </script>
+</body>
+</html>
