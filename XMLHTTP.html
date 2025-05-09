@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Request</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .card{
+            width: 330px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .card img{
+            width: 330px;
+            max-width: 100%;
+            object-fit: cover;
+        }
+
+        .mealid, .mealtag {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        p{
+            font-size: 14px;
+            color: olive;
+            line-height: normal;
+            text-transform: capitalize;
+            margin-bottom: 0px;
+        }
+        .card-main{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            padding: 0px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>XML Requested</h1>
+    <div class="card-main">
+        
+    </div>
+    <script>
+      let uservalue = 'chicken';
+      const urlRequest = `https://themealdb.com/api/json/v1/1/search.php?s=${uservalue}`;
+      const  xhr = new XMLHttpRequest();
+   
+      let  cardmain = document.querySelector('.card-main');
+      cardmain.innerHTML = '';
+      
+      xhr.open('GET',urlRequest);
+      xhr.send();
+      xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            const dataload = data.meals;
+            //console.log(data.meals)
+            //console.log(dataload.strArea)
+            console.log(dataload)
+            
+            dataload.forEach( (el,item,array)=>{
+                let pl = el.strInstructions;
+                let plength = pl.slice(0,400)
+                cardmain.innerHTML +=`
+                <div class="card">
+                    <img src="${el.strMealThumb}" alt="">
+                    <div class="mealid">
+                        <p>strMeal: ${el.strMeal}</p>
+                        <p>idMeal: ${el.idMeal}</p>
+                    </div>
+                    <div class="mealtag">
+                        <p>strCategory: ${el.strCategory}</p>
+                        <p>strTags: ${el.strTags}</p>
+                    </div>
+                    <div class="mealdecription">
+                        <p class="descrip-p" style="color:#000">Instructions: ${plength}....</p>
+                    </div>
+                    <div class="stringredient">
+                        <p>Ingredient: ${el.strIngredient1},${el.strIngredient2},${el.strIngredient3},${el.strIngredient4},${el.strIngredient5},${el.strIngredient6},${el.strIngredient7},${el.strIngredient8}</p>
+                    </div>
+                </div> 
+                `
+            })
+        }
+      }
+
+      
+
+    </script>
+</body>
+
+</html>
