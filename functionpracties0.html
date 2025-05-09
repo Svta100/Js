@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <p>
+        <h2>function Obeject</h2>
+    </p>
+    <script>
+      
+      let people = function(name , email, age){
+        this.name = name;
+        this.email = email;
+        this.age = age;
+        console.log(`name is ${this.name} are email ${this.email}  ${this.age} year`);
+        this.info = function(){
+            console.log(this);
+            setTimeout( ()=>{
+                console.log(`name is ${this.name} are email ${this.email}  ${this.age} year`);
+            },3000)
+
+        }
+      }
+
+
+      let person = new people('jhon','jhon@gmail.com',34);
+      let person1 = new people('vijay','vijay@gmail.com',30);
+      let person2 = new people('devesh','devesh@gmail.com',35);
+      console.log(person);
+      person.info();
+      console.log(person1);
+      person1.info();
+      console.log(person2);
+      person2.info();
+
+
+    </script>
+</body>
+
+</html>

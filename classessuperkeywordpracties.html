@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2>Classes & Obeject</h2>
+    </p>
+    <script>
+      
+       class createUser{
+        constructor(fname,lname,age){
+            this.fristName = fname;
+            this.lastName = lname;
+            this.age = age;
+        }
+        getBirthYear(){
+            //console.log(new Date().getFullYear()-this.age)
+            return new Date().getFullYear()-this.age;
+        }
+        getFullName(){
+            //console.log(this.fristName + ' ' + this.lastName)
+            return this.fristName + ' ' + this.lastName;
+        }
+       }
+              const user1 = new createUser("Vijay" ,'Kumar' ,29);
+       const user2 = new createUser('Devesh', 'Kuamr', 32);
+
+
+      user1.getBirthYear();
+      user1.getFullName()
+      user2.getBirthYear();
+      user2.getFullName()
+
+
+
+
+      class Student {
+        constructor(fname,classes,branch,year){
+            this.fname=fname;
+            this.classes = classes;
+            this.branch = branch;
+            this.year = year;
+        }
+        study(classes){
+            console.log(`${this.fname} are Student and he will be year ${this.year} complete study class ${this.classes}`);
+        }
+        studyBranch(subject){
+            console.log(`${this.fname} are Student and current study in branch  ${this.branch} subject ${subject} of ${this.year}`)
+        }
+      }
+      
+
+    
+      let student1 = new Student('Vijay','MCA','Computer Engineering', 2019);
+      let student2 = new Student('Akash','B.Sc', "Science", 2025);
+
+      student1.study()
+      student2.studyBranch('Math Physices')
+
+
+
+
+    //   super keywork use
+      
+      class Empolyees {
+        constructor(fname,lname,age,company,salary,joinDate,accountNumber){
+            this.fname = fname;
+            this.lname = lname;
+            this.age = age;
+            this.company = company;
+            this.salary = salary;
+            this.joinDate = joinDate;
+            this.accountNumber = accountNumber
+        }
+        EmpWorking(){
+            //console.log(`employee are working`);
+            let studyage = 21;
+            let calexp = new Date().getFullYear() - new Date(this.joinDate).getFullYear()-studyage;
+            // console.log(calexp);
+            console.log(`Its ${this.fname} ${this.lname} year old ${this.age} employee are working in ${this.company} company and total experience ${calexp} years`);
+            console.log(`${this.fname } ${this.lname} and salary are ${this.salary} LPM Bank Account No. ${this.accountNumber}`)
+        }
+        EmpNotWorking(collegeName,course,year,collegeYear){
+            console.log(`Its ${this.fname} ${this.lname} are not working in ${collegeName} and ${course} of ${collegeYear} in the year ${year}`);
+        }
+      }
+
+      class employeeBank extends Empolyees{
+        constructor(fname,lname,age,company,salary,joinDate,accountNumber,bankName,IFSCCODE){
+            super(fname,lname,age,company,salary,joinDate,accountNumber,bankName,IFSCCODE)
+            this.fname = fname;
+            this.lname = lname;
+            this.age = age;
+            this.company = company;
+            this.salary = salary;
+            this.joinDate = joinDate;
+            this.accountNumber= accountNumber;
+            this.bankName = bankName;
+            this.IFSCCODE = IFSCCODE;
+            console.log(this.bankName)
+            //console.log(this)
+        }
+        
+        empBankDetails(){
+            console.log('Bank Details',this.fname,this.lname,this.bankName ,this.accountNumber ,this.IFSCCODE)
+        }
+        empSalaryCredit(){
+            console.log(`${this.fname} ${this.lname} are your ${this.bankName} Account ${this.accountNumber} salary credit amount Rs. ${this.salary}`)
+        }
+        empnotworking(){
+            console.log(`${this.fname} ${this.lname} ${this.age} are currently not working`)
+        }
+        
+      }
+    
+
+     let employee1 = new Empolyees('Ganesh','Kumar',30,'Google',255900,'10-02-1990',10040500000013)
+     let employee2 = new Empolyees('Devesh','Kumar',25)
+
+     employee1.EmpWorking()
+     employee2.EmpNotWorking('IIMT','MCA',2025,'3YEAR')
+
+     let empBank = new employeeBank('Vijay','Kumar', 28,'Amazon',325900,'10-02-2000',10040500004566,'Kotak Bank', 'KOTAKB00987');
+     let empBank1 = new employeeBank('Ajay','Kumar', 30,'TATA',225900,'10-02-1999',10040500000674,'Union Bank','UBION43567');
+     let empBank2 = new employeeBank('Devesh','Kumar', 32,'ZOMATO',122900,'10-02-1999',10040500000432,'Punjab National Bank','PNB47474');
+     let empnotwork = new employeeBank('Akhilesh','Kumar', 29);
+
+
+     console.log(empBank);
+     console.log(empBank1);
+     console.log(empBank2);
+     console.log(empnotwork);
+     empBank.empBankDetails();
+     empBank.empSalaryCredit();
+     empBank1.empBankDetails();
+     empBank1.empSalaryCredit();
+     empBank2.empBankDetails();
+     empBank2.empSalaryCredit();
+     empnotwork.empnotworking()
+     
+    </script>
+</body>
+
+</html>

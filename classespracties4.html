@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2>Classes & Obeject</h2>
+    </p>
+    <script>
+      
+       class createUser{
+        constructor(a,b,c){
+            //console.dir(this);
+            //console.log(a,b,c);
+
+            this.fristName = a;
+            this.lastName = b;
+            this.age = c;
+        }
+        getBirthYear(){
+            console.log(new Date().getFullYear()-this.age)
+            return new Date().getFullYear()-this.age;
+        }
+        getFullName(){
+            console.log(this.fristName + ' ' + this.lastName)
+            return this.fristName + ' ' + this.lastName;
+        }
+       }
+       
+       //console.dir(createUser)
+       const user1 = new createUser("Vijay" ,'Kumar' ,29);
+       const user2 = new createUser('Devesh', 'Kuamr', 32);
+
+
+      user1.getBirthYear();
+      user1.getFullName()
+      user2.getBirthYear();
+      user2.getFullName()
+
+
+    </script>
+</body>
+
+</html>

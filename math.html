@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math</title>
+</head>
+<body>
+    <h1>random number</h1>
+    <script>
+        let list = ['apple','orange','mango','banana','papaya','chico','grapes','jackfruits'];
+        
+    console.log(list[1])
+    console.log(Math.random(list))
+    
+     setInterval( (el)=>{
+        let ganarateNumber = Math.floor(Math.random()*list.length);
+         if(list[ganarateNumber] == 'apple'){
+            console.log(list[ganarateNumber] + ' is color yellow green');
+         }
+        else if(list[ganarateNumber] == 'orange'){
+            console.log(list[ganarateNumber] + ' is color yellow red orange');
+         }
+        else if(list[ganarateNumber] == 'mango'){
+            console.log(list[ganarateNumber] + ' is color  green-yellow');
+         }
+        else if(list[ganarateNumber] == 'banana'){
+            console.log(list[ganarateNumber] + ' is color yellow-yellow');
+         }
+        else if(list[ganarateNumber] == 'papaya'){
+            console.log(list[ganarateNumber] + ' is color yellow green-yellow');
+         }
+        else if(list[ganarateNumber] == 'chico'){
+            console.log(list[ganarateNumber] + ' is color yellow gray');
+        }
+        else if(list[ganarateNumber] == 'grapes'){
+            console.log(list[ganarateNumber] + ' is color yellow leight yellow');
+        }
+        else if(list[ganarateNumber] == 'jackfruits'){
+            console.log(list[ganarateNumber] + ' is color yellow yellow-brawn');
+        }
+        else{
+            console.log(list[ganarateNumber]);
+        }
+         
+     },1000)
+    </script>
+</body>
+</html>

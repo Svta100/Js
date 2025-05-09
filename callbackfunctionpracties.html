@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call back </title>
+</head>
+<body>
+    <h1>callback function practices</h1>
+   <script>
+    function sumNumber(a,b){
+            console.log( "a+b", a+b);
+            return a+b;
+       }
+       function setNumber(a,b,addNumber){
+          addNumber(a,b);
+          console.log('fucntion 2', a+b);
+       }
+       setNumber(4,6, sumNumber);
+
+
+
+    // 1. Basic Callback Example
+   
+    function greet(name, callback){
+        console.log("hello", name);
+        callback();
+    }
+    function sayGoodBye(){
+        console.log('goodbye');
+    }
+    greet('Alice',sayGoodBye);
+
+
+
+    // settimeout  Callback Example
+    function showMessage(){
+        console.log('hello javascript callback fucntion')
+    }
+    setTimeout(showMessage,5000)
+
+
+    // forEach method Callback Example
+
+     const numbers = [22,33,45,54,63,73,28,49];
+
+     console.log(numbers)
+     let num = numbers.map( (el)=>{
+        console.log(el*2)
+        return el*2;
+     })
+     console.log(num)
+
+     let num2 = numbers.filter( (el)=>{
+        console.log(el<=2)
+        return el<=3;
+     })
+     console.log(num2)
+
+     let num3 = numbers.forEach( (el)=>{
+        console.log(el)
+        return el<=3;
+     })
+     //console.log(num3)
+
+
+     let num4 = numbers.reduce( (accu,cur)=>{
+        console.log(accu,cur)
+        return accu+cur;
+     })
+
+     console.log(num4)
+
+   </script> 
+</body>
+</html>

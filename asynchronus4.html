@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks</title>
+<style>
+    .btn{
+        border: 1px solid black;
+    }
+    .show{
+        display: block;
+    }
+</style>
+</head>
+<body>   
+
+    <h2>Hello js Asynchronus Good Morning</h2>
+    <p id="para"></p>
+    <button class="btnStart">START</button>
+    <button class="btnStop">STOP</button>
+ <script>
+   setInterval( function(){
+       //document.querySelector('#para').innerHTML+="vijay";
+       //console.log(Date.now())
+   },1000)
+
+   let setinterval = function(str){
+        console.log(str, Date.now())
+   }
+
+  let stopset = setInterval(setinterval,1200,'today')
+
+  clearInterval(stopset);
+
+
+
+  let startbtn = document.querySelector('.btnStart');
+  let stopbtn = document.querySelector('.btnStop');
+   
+  let startfunctionstop; 
+  let start = function(){
+     console.log("Start")
+     if(!startfunctionstop){
+        //console.log(!startfunctionstop)
+        startfunctionstop = setInterval(startFunction,1000)
+     }
+     function startFunction(){
+        console.log(Date.now())
+     }
+  }
+
+  const stop = function(){
+    console.log('stop')
+    clearInterval(startfunctionstop);
+    //startfunctionstop = null
+  }
+
+  startbtn.addEventListener('click',start)
+  stopbtn.addEventListener('click',stop)
+
+  </script>
+</body>
+
+</html>

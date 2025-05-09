@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2><b>Inheritance</b> =></h2>
+        Inhertance is passing down properties & Method from parent class to child class
+    </p>
+   <p>or "A class created with a class inheritance inherits all the methods from another class:
+
+    "</p>
+    <p>
+        <strong>syntax</strong>
+    </p>
+   
+    <p>
+        <b>
+            class parent{
+
+            }
+        </b>
+    </p>
+    <p>
+        <b>
+            To create a class inheritance, use the extends keyword.
+        </b>
+    </p>
+    <p>
+        <strong>
+            class child  extend parent{
+
+            }
+        </strong>
+    </p>
+
+    <p>
+        <address>
+            if child & parent have same method child's method will be  used  <b>[Method Overriding]</b>
+        </address>
+    </p>
+    <button onclick="student1.addDetails()">Add</button>
+    <button onclick="student1.removeDetails()">Remove</button>
+    <div id="message">
+        <ul class="ulist">
+
+        </ul>
+    </div>
+    <script>
+       class StudentDetails{
+          constructor(name,age,professional){
+            this.name = name;
+            this.age = age;
+            this.professional = professional;
+          }
+          addDetails(){
+            let  ullist = document.querySelector('.ulist')
+            let createLi = document.createElement('li')
+            createLi.innerHTML+= `${this.name} ${this.age} is ${this.professional}`;
+            ullist.append(createLi)
+            //console.log(createLi)
+            //console.log(`${this.name} ${this.age} is ${this.professional}`);
+          }
+          removeDetails(){
+            console.log(`${this.name} ${this.age} is ${this.professional}`);
+            let  ullist = document.querySelectorAll('li')
+            console.log(ullist)
+            //ullist.lastChild
+          }
+       }
+
+       let student1 = new StudentDetails('Vijay',30,'Front End Developer')
+       
+    </script>
+</body>
+
+</html>

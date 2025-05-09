@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+   <h1>prototype Practies</h1> 
+   <script>
+        const students ={
+            fname : 'vijay',
+            lname : 'kumar',
+            email : 'kannaujiyavijay200@gmail.com',
+            class : 'MCA',
+            collage : 'IIMT',
+            roll : 1621614011,
+            phone : 1800123012,
+            getfullname(){
+                console.log(`${this.fname} ${this.lname} ${this.email}`)
+            }
+        }
+        const students1 ={
+            fname : 'Devesh',
+            lname : 'kumar',
+            email : 'deveshkumar234@gmail.com',
+            class : 'MCA',
+            collage : 'IIMT',
+            roll  : 1621614005,
+            phone : 1800123342,
+            __proto__ : students
+        }
+        const students2 ={
+            fname : 'Akhilesh',
+            lname : 'kumar',
+            email : 'akhileshkumar100@gmail.com',
+            class : 'MCA',
+            collage : 'IIMT',
+            roll  : 1621614002,
+            phone : 1800123242,
+            __proto__ : students1
+        }
+        console.log(students);
+        console.log(students.getfullname())
+        console.log(students1.getfullname())
+        console.log(students2.getfullname())
+        //console.log(students2.__proto__.fname)
+    
+        //students.getfullname();
+        students.id = 4;
+        console.log(students.id)
+        console.log('keys', Object.keys(students1))
+        console.log('value', Object.values(students1))
+        console.log('entries', Object.entries(students1))
+        for(let stuval in students){
+            //console.log(stuval, students[stuval])
+            console.log(students[stuval])
+        }
+
+        
+       let namestring = 'vijay kannaujiya';
+       console.log(namestring.__proto__)
+       namestring.checklenght;
+       String.prototype.checklenght = function(){
+           console.log('${this.lenght}')
+       }
+
+   </script>
+</body>
+</html>

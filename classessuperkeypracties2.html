@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2>Classes & Obeject</h2>
+    </p>
+    <script>
+      
+    
+    class Father {
+        constructor(givemoney){
+            this.fmoney = givemoney;
+        }
+        showFatherMoney(){
+            return this.fmoney +  " this father Money";
+        }
+    }
+
+    class Son extends Father{
+        constructor(sonGivemoney){
+            super(sonGivemoney);
+            this.sonMoney = sonGivemoney+30;
+        }
+        showSonMoney(){
+            return  this.sonMoney + " this Son Money";
+        }
+    }
+
+    let money = new Son(10000);
+    //let money1 = new Father(20000);
+    money.showSonMoney();
+    money.showFatherMoney()  
+    console.log(money.showSonMoney())
+    console.log(money.showFatherMoney())
+    </script>
+</body>
+
+</html>

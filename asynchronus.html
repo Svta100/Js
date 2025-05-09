@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks</title>
+</head>
+<body>
+    <h1>
+        synchronous 
+    </h1>
+    <p>
+        <b>
+            <i>        
+                synchronous mean the code run in a particular squence of instructions give in the program each instruction wait for the previous to complete its execution
+            </i>
+        </b>
+    </p>
+    <h1>
+        Asynchronus 
+    </h1>
+    <p>
+        <b>
+            <i>
+                Due to synchronous programming sometimes imp  instrunction get blocked to some previous instruction , which causes a delay in the UI.<br>
+        Asynchronus code execution allow to execute nexts instruction immediately and doesn't block the flow. 
+            </i>
+        </b>
+    </p>
+
+    <h2>Hello Good Morning</h2>
+    <script>
+   console.log("Hi");
+    setTimeout(function() {
+        console.log("Geek");
+    }, 2000);
+
+    const chengeText = function(){
+        document.querySelector('h2').innerHTML="Hello Good Evening"
+    }
+    setTimeout(chengeText,3000)
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+   <h1>prototype Practies</h1> 
+   <p id="para"></p>
+   <script>
+        
+        function person(first ,last ,age ,clr ,eye){
+            this.firstname = first;
+            this.lastname = last;
+            this.age = age;
+            this.bodycolor = clr;
+            this.humaneye = eye;
+        }
+        person.prototype.name = function(){
+            console.log(`${this.firstname} ${this.lastname} is ${this.age} , eye color ${this.humaneye} and ${this.bodycolor} language ${this.nationality}`);
+            return this.firstname
+        }
+
+        person.prototype.nationality = "English";
+
+        let persondetails = new person('vijay' ,'kumar',28, 'light-brown','gray');
+        document.getElementById('para').innerHTML = "this my", persondetails.name();
+
+        console.log(persondetails.name())
+        console.log(persondetails.nationality)
+
+   </script>
+</body>
+</html>

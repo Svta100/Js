@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2>Classes & Obeject</h2>
+    </p>
+    <script>
+      
+    
+        class Student {
+            constructor(fname,lname,standerd){
+                this.fname = fname;
+                this.lname = lname;
+                this.standerd = standerd;
+            }
+            studentPass(){
+                console.log(`${this.fname} ${this.lname} student are pass in ${this.standerd}th`);
+            }
+            studentFailed(){
+                console.log(`${this.fname} ${this.lname} student are failed in ${this.standerd}th`);
+            }
+        }
+
+
+        class Subjectfailed  {
+            constructor(subject1,subject2){
+                this.subject1 = subject1;
+                this.subject2 = subject2;
+            }
+            SubjectMarks(){
+                console.log(`student are failed in subject ${this.subject1}`)
+            }
+            SubjectMarks1(){
+                console.log(`student are failed in subject ${this.subject1} and ${this.subject2}`)
+            }
+        }
+
+     let student1 = new Student('vijay','kumar', 12);
+     let student2 = new Student('devesh','kumar', 10);
+     let student3 = new Student('akhilesh','kumar', 11);
+
+     let studentsubject = new Subjectfailed('Math');
+     let studentsubject1 = new Subjectfailed('Hindi','Math');
+
+     student1.studentFailed();
+     student2.studentPass();
+     student3.studentFailed();
+
+     studentsubject.SubjectMarks()
+     studentsubject1.SubjectMarks1()
+
+    </script>
+</body>
+
+</html>

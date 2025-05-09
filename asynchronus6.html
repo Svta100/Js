@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks</title>
+<style>
+    .btn{
+        border: 1px solid black;
+    }
+    .show{
+        display: block;
+    }
+</style>
+</head>
+<body>   
+
+    <h2>Hello js Asynchronus Good Morning</h2>
+    <h2>body  backgrouncolor change every second</h2>
+    <p id="para"></p>
+    <button class="btnStart">START</button>
+    <button class="btnStop">STOP</button>
+ <script>
+
+
+
+
+  let btnstart = document.querySelector('.btnStart');
+  let btnstop = document.querySelector('.btnStop');
+
+  const randomcolor = function(){
+    const hexanumber = '0123456789ABCDEF';
+    let clr = "#";
+    for( i=0;i<6;i++){
+        clr+= hexanumber[Math.floor(Math.random()*16)]
+    }
+    return clr
+  }
+  console.log( randomcolor())
+
+  //console.log(Math.floor(Math.random()*10))
+   
+  let intervalId
+  let startfunction = function(){
+    intervalId = setInterval(startitmefunction,1000);
+      function startitmefunction(){
+        document.querySelector('body').style.background =randomcolor()
+       
+      }
+      console.log('start')
+      btnstart.disabled = true
+  }
+  let stopfunction = function(){
+      clearInterval( intervalId)
+      intervalId = null
+      console.log('stop')
+      btnstart.disabled = false
+  }
+
+  btnstart.addEventListener('click',startfunction)
+  btnstop.addEventListener("click",stopfunction)
+
+ </script>
+</body>
+
+</html>

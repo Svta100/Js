@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2>Classes & Obeject</h2>
+    </p>
+    <p>
+        <h2>Prototype =></h2>
+        A javascrript object is an entity having  state and behavior (properties and method)
+        <br>
+        JS object have a special property called Prototype  // refreance to an object
+        <br>
+        We can set Prototype using  __proto__  (set Prototype)
+    </p>
+
+    <p>*if object & prototype have same method object method will be used</p>
+    <script>
+       
+      class student {
+        classA(branch,name){
+            console.log('class a is print A', branch);
+        }
+        classB(){
+            console.log('class a is print B')
+        }
+      }
+    
+      const callclass = new student();
+      const callclass2 = new student();
+      console.log(callclass)
+      console.log(callclass.classA('MCA'))
+    </script>
+</body>
+
+</html>

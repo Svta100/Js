@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks</title>
+</head>
+<body>
+    <h1>
+        synchronous 
+    </h1>
+    <p>
+        <b>
+            <i>        
+                synchronous mean the code run in a particular squence of instructions give in the program each instruction wait for the previous to complete its execution
+            </i>
+        </b>
+    </p>
+    <h1>
+        Asynchronus 
+    </h1>
+    <p>
+        <b>
+            <i>
+                Due to synchronous programming sometimes imp  instrunction get blocked to some previous instruction , which causes a delay in the UI.<br>
+        Asynchronus code execution allow to execute nexts instruction immediately and doesn't block the flow. 
+            </i>
+        </b>
+    </p>
+    <h1>callback function</h1>
+    <p>
+        <b><i>a call back function is a function passed  into another function as an argument</i></b> ,
+        which is then invoked inside the outerfunction to complete some kind fi routine or action.
+    </p>
+    <script>
+     
+     function a(b){
+        console.dir(b)
+        //console.log(b)
+        b()
+     }
+
+    function sayHi(){
+        console.log("hello say hi");
+        console.log("hello say hi")
+    }
+
+    a(sayHi)
+    sayHi
+
+    a( function(){
+        console.log('welcnjvk')
+    })
+
+
+    function hello(){
+        console.log("settime out")
+    }
+    setTimeout(hello,4000);
+
+    setTimeout( ()=>{
+        console.log("settimeout 1")
+    },5000)
+    console.log("hello say hi")
+    console.log("hello say hi")
+     console.log("hello say hi")
+     console.log("hello say hi")
+    </script>
+</body>
+
+</html>

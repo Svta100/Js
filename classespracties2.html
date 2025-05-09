@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2>Classes & Obeject</h2>
+    </p>
+    <script>
+       class Person {
+           constructor(name,age){
+            this.name = name;
+            this.age = age
+          }
+
+          greet(address){
+            console.log(`this is ${this.name} home in ${address} and age ${this.age} year old`);
+            alert(this.age)
+          }
+          greet2(address){
+            console.log(`this is ${this.name} home in current address ${address}`)
+          }
+          greet3(address){
+            console.log(`this is ${this.name} home in ${address}`)
+          }
+       }
+       
+        class subperson extends Person{
+            greet4(address){
+                console.log(`this is second class`)
+            }
+        }
+
+
+       let onePerson = new Person('vijay' ,30);
+
+       onePerson.greet('noida');
+       onePerson.greet2('mumbai');
+       onePerson.greet3('Azamgarh');
+
+
+       let twoperson = new subperson('jai',30)
+       twoperson.greet4()
+       
+
+    </script>
+</body>
+
+</html>

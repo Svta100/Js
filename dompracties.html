@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom </title>
+</head>
+<body>
+   <div>
+    <p>paragraph 1</p>
+    <p>paragraph 2</p>
+    <p>paragraph 3</p>
+    <p>paragraph 4</p>
+    <p>paragraph 5</p>
+    <p>paragraph 6</p>
+    <p>paragraph 7</p>
+    <p>paragraph 8</p>
+    <p>paragraph 9</p>
+   </div>
+   <script>
+        console.log(document);
+        console.dir(document.body);
+        console.dir(document.body.firstElementChild.children);
+        //let allp = document.querySelectorAll('div')
+        //console.log(allp)
+
+        let divp = document.querySelector('div');
+        console.log(divp.hasChildNodes())
+        // if(divp.hasChildNodes()){
+        //   alert('given')
+        // }
+        // else{
+        //     alert("not given")
+        // }
+
+        let allp = document.querySelectorAll('p');
+        console.log(allp[2])
+         allp.forEach( (el,index)=>{
+            console.log(el,index) 
+         })
+
+
+        console.log(divp.lastChild.parentElement)
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2>Classes & Obeject</h2>
+    </p>
+    <script>
+      
+       class normalPerson{
+            constructor(name){
+                this.name = name
+            }
+            write(name){
+                console.log(`${name} do write a english word`)
+            }
+            read(){
+                console.log('normal person do read a english word')
+            }
+       }
+
+       class OrdinaryPerson extends normalPerson{
+            speak(){
+                console.log('normal person say speak a english word')
+            }
+            
+       }
+       class ExordinaryPerson extends OrdinaryPerson{
+            exspeak(){
+                console.log('normal person say extra speak read and write a english word')
+            }
+            
+       }
+       let normalperson1 = new normalPerson('vijay');
+       let OrdinaryPerson1 = new OrdinaryPerson();
+       let extraordinaryperson1 = new ExordinaryPerson();
+
+       extraordinaryperson1.write('vijay');
+       extraordinaryperson1.read();
+       extraordinaryperson1.speak();
+       extraordinaryperson1.exspeak();
+
+
+    </script>
+</body>
+
+</html>

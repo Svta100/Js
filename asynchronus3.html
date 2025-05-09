@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css
+    " rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+<style>
+    .btn{
+        border: 1px solid black;
+    }
+    .show{
+        display: block;
+    }
+</style>
+</head>
+<body>   
+
+    <h2>Hello Good Morning</h2>
+    <h2>modal open/stop automatacally</h2>
+
+    <button class="btn" id="btn"> stop modal</button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+    
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"  crossorigin="anonymous"></script>
+
+ <script>
+   console.log("Hi");
+    setTimeout(function() {
+        console.log("Geek");
+    }, 2000);
+
+    const chengeText = function(){
+        document.querySelector('h2').innerHTML="Hello Good Evening"
+    }
+    setTimeout(chengeText,3000)
+    
+
+
+   const modalOpen = function(){ document.querySelector('.modal').classList.add('show');
+   }
+   const stopModal = setTimeout(modalOpen,4000)
+
+  let stopBtn = document.querySelector("#btn");
+  stopBtn.addEventListener('click',function (){
+        console.log("Modal Stoped");
+      clearTimeout(stopModal)
+  })
+
+  </script>
+</body>
+
+</html>

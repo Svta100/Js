@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks</title>
+</head>
+<body>
+    <h1>
+        synchronous 
+    </h1>
+    <p>
+        <b>
+            <i>        
+                synchronous mean the code run in a particular squence of instructions give in the program each instruction wait for the previous to complete its execution
+            </i>
+        </b>
+    </p>
+    <h1>
+        Asynchronus 
+    </h1>
+    <p>
+        <b>
+            <i>
+                Due to synchronous programming sometimes imp  instrunction get blocked to some previous instruction , which causes a delay in the UI.<br>
+        Asynchronus code execution allow to execute nexts instruction immediately and doesn't block the flow. 
+            </i>
+        </b>
+    </p>
+    <h1>callback function</h1>
+    <p>
+        <b><i>a call back function is a function passed  into another function as an argument</i></b> ,
+        which is then invoked inside the outerfunction to complete some kind fi routine or action.
+    </p>
+    <script>
+        
+        // console.log('one');
+        // console.log('two');
+        // console.log('three');
+        // function hello (){
+        //     console.log('welcome to setTime out call')
+        // }
+        //setTimeout(hello ,4000);
+        // setTimeout(()=>{
+        //     console.log('welcome to setTime out call')
+        // },4000);
+        // console.log('four');
+        // console.log('five');
+        // console.log('six');
+
+        // const hello =()=>{
+        //     console.log("welcome to callbacks function")
+        // }
+
+        // setTimeout(hello,4000)
+
+
+        // callbacks use this 
+
+// example 1
+
+       function sumNumber(a,b){
+            console.log( "a+b", a+b);
+            return a+b;
+       }
+       function setNumber(a,b,addNumber){
+          addNumber(a,b);
+          console.log(a+b);
+       }
+       setNumber(4,6, sumNumber)
+
+
+       //example 2
+
+
+       function getDataId(dataId){
+            //after 2s
+            setTimeout( ()=>{
+                console.log('dataId' , dataId)
+            },3000)
+       }
+
+       getDataId(23);
+       getDataId(24);
+       getDataId(25);
+       getDataId(26);
+
+
+
+    //   example 2 nested callback
+
+    function newDataId(newDataId, nextDataId){
+        setTimeout( ()=>{
+            console.log('this Data Id' , newDataId);
+            if(nextDataId){
+                nextDataId();
+            }
+        },4000)
+    }
+
+    newDataId(12, ()=>{
+        console.log('getting data2........')
+        newDataId(13,()=>{
+            console.log('getting data3........')
+            newDataId(14, ()=>{
+                console.log('getting data3........')
+                newDataId(15,()=>{
+                    console.log('getting data4........')
+                    newDataId(16,()=>{
+                        console.log('getting data5........')
+                        newDataId(17)
+                    })
+                })
+            })
+        })
+    })
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

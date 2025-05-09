@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        function add(a,b){
+            let res = a+b;
+            console.log(res)
+            //ab(res)
+        }
+        
+        function sub(a,b,calladd){
+            calladd(a,b)
+            console.log(a-b);
+        }
+        
+        sub(3,5 ,add)
+
+
+        // example 2
+
+        function msgone(msgtwo){
+            msgtwo()
+            console.log("callback one")
+        }
+
+        function msgtwo(){
+            console.log("callback two")
+        }
+
+        msgone(msgtwo)
+    </script>
+</body>
+</html>

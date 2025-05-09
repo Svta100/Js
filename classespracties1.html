@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+    <style>
+        marquee{
+            border-bottom: 4px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>classes and obeject learn</h1>
+    <p>
+        <h2>Classes & Obeject</h2>
+    </p>
+    <p>
+        <h2>Prototype =></h2>
+        A javascrript object is an entity having  state and behavior (properties and method)
+        <br>
+        JS object have a special property called Prototype  // refreance to an object
+        <br>
+        We can set Prototype using  __proto__  (set Prototype)
+    </p>
+
+    <p>*if object & prototype have same method object method will be used</p>
+    <script>
+       
+       class Vehicle {
+        constructor(emoji,speed){
+            this.emoji = emoji;
+            this.speed = speed
+        }
+        addToPage(){
+            let path = document.createElement('marquee');
+            path.innerHTML = this.emoji;
+            path.scrollAmount = this.speed;
+            document.body.appendChild(path)
+            console.log(path.scrollAmount)
+        }
+       }
+       const bicycle = new Vehicle('🚴‍♀',20);
+       bicycle.addToPage()
+       const bicycle1 = new Vehicle('🛵',6);
+       bicycle1.addToPage()
+       const bicycle2 = new Vehicle('🚗',9);
+       bicycle2.addToPage()
+       const bicycle3 = new Vehicle('🚛',13);
+       bicycle3.addToPage()
+    </script>
+</body>
+
+</html>
